@@ -26,7 +26,7 @@
 </svg>
 <aside></aside>
 <div ng-if="VM.Status == 'KO'">Ce template n'existe pas...</div>
-<label for="dbg">Montrer Debug : </label> <input id="dbg" type="checkbox" ng-model="VM.check"/>
 <pre ng-show="VM.check">
 {{ VM.Template | json }}
 </pre>
+<label for="dbg">Afficher Données :&nbsp;</label> <input id="dbg" type="checkbox" ng-model="VM.check"/>

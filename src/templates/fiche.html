@@ -23,7 +23,7 @@
 	</g>
 </svg>
 <div ng-if="VM.Status == 'KO'">Cette Fiche n'existe pas...</div>
-<label for="dbg">Montrer Debug : </label> <input id="dbg" type="checkbox" ng-model="VM.check"/>
 <pre ng-show="VM.check">
 {{ VM.Sheet | json }}
 </pre>
+<label for="dbg">Afficher Données :&nbsp;</label> <input id="dbg" type="checkbox" ng-model="VM.check"/>
