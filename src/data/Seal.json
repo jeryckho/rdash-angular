@@ -1,0 +1,103 @@
+{
+	"Identite": {
+		"Nom": "Sealéia",
+		"Qualite": "Chasseuse de primes",
+		"Classe": "Aventurière",
+		"Peuple": "Nautolan",
+		"Merite": "Elite",
+		"Niveau": "4"
+	},
+	"Talents": [
+		"Polyglotte",
+		"Compagnon/3 cams",
+		"Trésor"
+	],
+	"Defense": {
+		"Esquive": "6",
+		"Armure": "2",
+		"Parade": "3",
+		"ParadeActive": "5"
+	},
+	"Armes": [
+		{
+			"Nom": "Holocams",
+			"Attaque": "16",
+			"CdM": "2",
+			"Critiques": "20"
+		},
+		{
+			"Nom": "Injonction",
+			"Attaque": "16",
+			"CdM": "1",
+			"Critiques": "20"
+		},
+		{
+			"Nom": "Arbalète-Blaster",
+			"Attaque": "13",
+			"CdM": "4",
+			"Critiques": "20"
+		},
+		{
+			"Nom": "Vibrodague",
+			"Attaque": "13",
+			"CdM": "2",
+			"Critiques": "20"
+		}
+	],
+	"Caracteristiques": {
+		"Vigueur": {
+			"Actuelle": "13",
+			"Max": "13"
+		},
+		"Agilite": {
+			"Actuelle": "13",
+			"Max": "14"
+		},
+		"Esprit": {
+			"Max": "15",
+			"Actuelle": "12"
+		},
+		"Aura": {
+			"Max": "16",
+			"Actuelle": "16"
+		}
+	},
+	"Determination": {
+		"Max": "3",
+		"Actuelle": "/"
+	},
+	"Credits": "36.500",
+	"Equipements": [
+		"ComLink",
+		"MedPacks x10",
+		"Brouilleur optique",
+		"Mille-patte venimeux x2",
+		"Capsule poison mortel",
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		"-------------------------------------",
+		"-------------------------------------",
+		"-------------------------------------"
+	],
+	"Vaisseau": {
+		"Classe": "2",
+		"Type": "Fighter",
+		"Equipage": "1",
+		"Passagers": "2",
+		"Hyperpropulsion": ".5",
+		"Armes": [
+			"bouclier / missiles"
+		],
+		"Maniabilite": "2",
+		"Blindage": "4",
+		"Boucliers": "3",
+		"Nom": "Y-Wing",
+		"Taille": "1"
+	}
+}

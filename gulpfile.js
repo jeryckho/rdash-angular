@@ -14,6 +14,8 @@ var paths = {
     scripts: 'src/js/**/*.*',
     styles: 'src/less/**/*.*',
     images: 'src/img/**/*.*',
+    data: 'src/data/**/*.*',
+    rsrc: 'src/resource/**/*.*',
     templates: 'src/templates/**/*.html',
     index: 'src/index.html',
     bower_fonts: 'src/components/**/*.{ttf,woff,woff2,eof,svg}',
@@ -48,11 +50,21 @@ gulp.task('copy-bower_fonts', function() {
 /**
  * Handle custom files
  */
-gulp.task('build-custom', ['custom-images', 'custom-js', 'custom-less', 'custom-templates']);
+gulp.task('build-custom', ['custom-images', 'custom-data', 'custom-rsrc', 'custom-js', 'custom-less', 'custom-templates']);
 
 gulp.task('custom-images', function() {
     return gulp.src(paths.images)
         .pipe(gulp.dest('dist/img'));
+});
+
+gulp.task('custom-data', function() {
+    return gulp.src(paths.data)
+        .pipe(gulp.dest('dist/data'));
+});
+
+gulp.task('custom-rsrc', function() {
+    return gulp.src(paths.rsrc)
+        .pipe(gulp.dest('dist/resource'));
 });
 
 gulp.task('custom-js', function() {
@@ -79,6 +91,8 @@ gulp.task('custom-templates', function() {
  */
 gulp.task('watch', function() {
     gulp.watch([paths.images], ['custom-images']);
+    gulp.watch([paths.data], ['custom-data']);
+    gulp.watch([paths.rsrc], ['custom-rsrc']);
     gulp.watch([paths.styles], ['custom-less']);
     gulp.watch([paths.scripts], ['custom-js']);
     gulp.watch([paths.templates], ['custom-templates']);

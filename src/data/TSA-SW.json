@@ -1,0 +1,792 @@
+{
+  "Fond": {
+    "Src": "./resource/Fiche_Perso_TESA_SW.jpg",
+    "Width": 2309,
+    "Height": 3260
+  },
+  "Boxes": [
+    {
+      "x": 477,
+      "y": 368,
+      "w": 118,
+      "h": 118,
+      "ref": "Defense.Esquive",
+      "fer": "middle",
+      "col": "#0000ff"
+    },
+    {
+      "x": 642,
+      "y": 368,
+      "w": 118,
+      "h": 118,
+      "ref": "Defense.Armure",
+      "fer": "middle",
+      "col": "#0000ff"
+    },
+    {
+      "x": 807,
+      "y": 368,
+      "w": 118,
+      "h": 118,
+      "ref": "Defense.Parade",
+      "fer": "middle",
+      "col": "#0000ff"
+    },
+    {
+      "x": 1465,
+      "y": 2787,
+      "w": 116,
+      "h": 116,
+      "ref": "Vaisseau.Maniabilite",
+      "fer": "middle",
+      "col": "#0000ff"
+    },
+    {
+      "x": 1630,
+      "y": 2787,
+      "w": 116,
+      "h": 116,
+      "ref": "Vaisseau.Blindage",
+      "fer": "middle",
+      "col": "#0000ff"
+    },
+    {
+      "x": 1796,
+      "y": 2787,
+      "w": 116,
+      "h": 116,
+      "ref": "Vaisseau.Boucliers",
+      "fer": "middle",
+      "col": "#0000ff"
+    },
+    {
+      "x": 1797,
+      "y": 112,
+      "w": 450,
+      "h": 50,
+      "ref": "Talents.0",
+      "fer": "end",
+      "col": "#0000ff"
+    },
+    {
+      "x": 1797,
+      "y": 170,
+      "w": 450,
+      "h": 50,
+      "ref": "Talents.1",
+      "fer": "end",
+      "col": "#0000ff"
+    },
+    {
+      "x": 1797,
+      "y": 227,
+      "w": 450,
+      "h": 50,
+      "ref": "Talents.2",
+      "fer": "end",
+      "col": "#0000ff"
+    },
+    {
+      "x": 1120,
+      "y": 937,
+      "w": 544,
+      "h": 55,
+      "ref": "Armes.0.Nom",
+      "fer": "start",
+      "col": "#0000ff"
+    },
+    {
+      "x": 1730,
+      "y": 937,
+      "w": 110,
+      "h": 55,
+      "ref": "Armes.0.Attaque",
+      "fer": "middle",
+      "col": "#0000ff"
+    },
+    {
+      "x": 1906,
+      "y": 937,
+      "w": 137,
+      "h": 55,
+      "ref": "Armes.0.CdM",
+      "fer": "middle",
+      "col": "#0000ff"
+    },
+    {
+      "x": 2110,
+      "y": 937,
+      "w": 134,
+      "h": 55,
+      "ref": "Armes.0.Critiques",
+      "fer": "middle",
+      "col": "#0000ff"
+    },
+    {
+      "x": 1120,
+      "y": 999,
+      "w": 544,
+      "h": 55,
+      "ref": "Armes.1.Nom",
+      "fer": "start",
+      "col": "#0000ff"
+    },
+    {
+      "x": 1730,
+      "y": 999,
+      "w": 110,
+      "h": 55,
+      "ref": "Armes.1.Attaque",
+      "fer": "middle",
+      "col": "#0000ff"
+    },
+    {
+      "x": 1906,
+      "y": 999,
+      "w": 137,
+      "h": 55,
+      "ref": "Armes.1.CdM",
+      "fer": "middle",
+      "col": "#0000ff"
+    },
+    {
+      "x": 2110,
+      "y": 999,
+      "w": 134,
+      "h": 55,
+      "ref": "Armes.1.Critiques",
+      "fer": "middle",
+      "col": "#0000ff"
+    },
+    {
+      "x": 1120,
+      "y": 1062,
+      "w": 544,
+      "h": 55,
+      "ref": "Armes.2.Nom",
+      "fer": "start",
+      "col": "#0000ff"
+    },
+    {
+      "x": 1730,
+      "y": 1062,
+      "w": 110,
+      "h": 55,
+      "ref": "Armes.2.Attaque",
+      "fer": "middle",
+      "col": "#0000ff"
+    },
+    {
+      "x": 1906,
+      "y": 1062,
+      "w": 137,
+      "h": 55,
+      "ref": "Armes.2.CdM",
+      "fer": "middle",
+      "col": "#0000ff"
+    },
+    {
+      "x": 2110,
+      "y": 1062,
+      "w": 134,
+      "h": 55,
+      "ref": "Armes.2.Critiques",
+      "fer": "middle",
+      "col": "#0000ff"
+    },
+    {
+      "x": 1120,
+      "y": 1123,
+      "w": 544,
+      "h": 55,
+      "ref": "Armes.3.Nom",
+      "fer": "start",
+      "col": "#0000ff"
+    },
+    {
+      "x": 1730,
+      "y": 1123,
+      "w": 110,
+      "h": 55,
+      "ref": "Armes.3.Attaque",
+      "fer": "middle",
+      "col": "#0000ff"
+    },
+    {
+      "x": 1906,
+      "y": 1123,
+      "w": 137,
+      "h": 55,
+      "ref": "Armes.3.CdM",
+      "fer": "middle",
+      "col": "#0000ff"
+    },
+    {
+      "x": 2110,
+      "y": 1123,
+      "w": 134,
+      "h": 55,
+      "ref": "Armes.3.Critiques",
+      "fer": "middle",
+      "col": "#0000ff"
+    },
+    {
+      "x": 293,
+      "y": 169,
+      "w": 597,
+      "h": 50,
+      "ref": "Identite.Qualite",
+      "fer": "end",
+      "col": "#0000ff"
+    },
+    {
+      "x": 180,
+      "y": 108,
+      "w": 711,
+      "h": 53,
+      "ref": "Identite.Nom",
+      "fer": "end",
+      "col": "#0000ff"
+    },
+    {
+      "x": 412,
+      "y": 226,
+      "w": 478,
+      "h": 50,
+      "ref": "Identite.Qualificatif",
+      "fer": "end",
+      "col": "#0000ff"
+    },
+    {
+      "x": 1159,
+      "y": 112,
+      "w": 400,
+      "h": 50,
+      "ref": "Identite.Classe",
+      "fer": "end",
+      "col": "#0000ff"
+    },
+    {
+      "x": 1159,
+      "y": 170,
+      "w": 400,
+      "h": 50,
+      "ref": "Identite.Peuple",
+      "fer": "end",
+      "col": "#0000ff"
+    },
+    {
+      "x": 1159,
+      "y": 227,
+      "w": 400,
+      "h": 50,
+      "ref": "Identite.Merite",
+      "fer": "end",
+      "col": "#0000ff"
+    },
+    {
+      "x": 1591,
+      "y": 205,
+      "w": 78,
+      "h": 78,
+      "ref": "Identite.Niveau",
+      "fer": "middle",
+      "col": "#0000ff"
+    },
+    {
+      "x": 815,
+      "y": 677,
+      "w": 89,
+      "h": 89,
+      "ref": "Defense.ParadeActive",
+      "fer": "middle",
+      "col": "#0000ff"
+    },
+    {
+      "x": 487,
+      "y": 2940,
+      "w": 79,
+      "h": 79,
+      "ref": "Determination.Max",
+      "fer": "middle",
+      "col": "#0000ff"
+    },
+    {
+      "x": 599,
+      "y": 2950,
+      "w": 100,
+      "h": 50,
+      "ref": "Determination.Actuelle",
+      "fer": "middle",
+      "col": "#0000ff"
+    },
+    {
+      "x": 1731,
+      "y": 2550,
+      "w": 405,
+      "h": 66,
+      "ref": "Credits",
+      "fer": "end",
+      "col": "#0000ff"
+    },
+    {
+      "x": 1812,
+      "y": 2708,
+      "w": 450,
+      "h": 55,
+      "ref": "Vaisseau.Nom",
+      "fer": "end",
+      "col": "#0000ff"
+    },
+    {
+      "x": 2031,
+      "y": 2780,
+      "w": 226,
+      "h": 55,
+      "ref": "Vaisseau.Type",
+      "fer": "end",
+      "col": "#0000ff"
+    },
+    {
+      "x": 2059,
+      "y": 2844,
+      "w": 75,
+      "h": 55,
+      "ref": "Vaisseau.Taille",
+      "fer": "middle",
+      "col": "#0000ff"
+    },
+    {
+      "x": 2163,
+      "y": 2859,
+      "w": 90,
+      "h": 90,
+      "ref": "Vaisseau.Classe",
+      "fer": "middle",
+      "col": "#0000ff"
+    },
+    {
+      "x": 1611,
+      "y": 2959,
+      "w": 50,
+      "h": 50,
+      "ref": "Vaisseau.Equipage",
+      "fer": "middle",
+      "col": "#0000ff"
+    },
+    {
+      "x": 1865,
+      "y": 2960,
+      "w": 50,
+      "h": 50,
+      "ref": "Vaisseau.Passagers",
+      "fer": "middle",
+      "col": "#0000ff"
+    },
+    {
+      "x": 2199,
+      "y": 2960,
+      "w": 50,
+      "h": 50,
+      "ref": "Vaisseau.Hyperpropulsion",
+      "fer": "middle",
+      "col": "#0000ff"
+    },
+    {
+      "x": 1684,
+      "y": 3018,
+      "w": 570,
+      "h": 50,
+      "ref": "Vaisseau.Poste",
+      "fer": "end",
+      "col": "#0000ff"
+    },
+    {
+      "x": 1757,
+      "y": 3073,
+      "w": 504,
+      "h": 50,
+      "ref": "Vaisseau.Armes.0",
+      "fer": "start",
+      "col": "#0000ff"
+    },
+    {
+      "x": 1446,
+      "y": 3128,
+      "w": 815,
+      "h": 50,
+      "ref": "Vaisseau.Armes.1",
+      "fer": "start",
+      "col": "#0000ff"
+    },
+    {
+      "x": 1446,
+      "y": 3183,
+      "w": 814,
+      "h": 50,
+      "ref": "Vaisseau.Armes.2",
+      "fer": "start",
+      "col": "#0000ff"
+    },
+    {
+      "x": 1489,
+      "y": 1533,
+      "w": 760,
+      "h": 55,
+      "ref": "Equipements.0",
+      "fer": "start",
+      "col": "#0000ff"
+    },
+    {
+      "x": 1489,
+      "y": 1595,
+      "w": 760,
+      "h": 55,
+      "ref": "Equipements.1",
+      "fer": "start",
+      "col": "#0000ff"
+    },
+    {
+      "x": 1489,
+      "y": 1657,
+      "w": 760,
+      "h": 55,
+      "ref": "Equipements.2",
+      "fer": "start",
+      "col": "#0000ff"
+    },
+    {
+      "x": 1489,
+      "y": 1719,
+      "w": 760,
+      "h": 55,
+      "ref": "Equipements.3",
+      "fer": "start",
+      "col": "#0000ff"
+    },
+    {
+      "x": 1489,
+      "y": 1781,
+      "w": 760,
+      "h": 55,
+      "ref": "Equipements.4",
+      "fer": "start",
+      "col": "#0000ff"
+    },
+    {
+      "x": 1489,
+      "y": 1844,
+      "w": 760,
+      "h": 55,
+      "ref": "Equipements.5",
+      "fer": "start",
+      "col": "#0000ff"
+    },
+    {
+      "x": 1489,
+      "y": 1906,
+      "w": 760,
+      "h": 55,
+      "ref": "Equipements.6",
+      "fer": "start",
+      "col": "#0000ff"
+    },
+    {
+      "x": 1489,
+      "y": 1968,
+      "w": 760,
+      "h": 55,
+      "ref": "Equipements.7",
+      "fer": "start",
+      "col": "#0000ff"
+    },
+    {
+      "x": 1489,
+      "y": 2031,
+      "w": 760,
+      "h": 55,
+      "ref": "Equipements.8",
+      "fer": "start",
+      "col": "#0000ff"
+    },
+    {
+      "x": 1489,
+      "y": 2093,
+      "w": 760,
+      "h": 55,
+      "ref": "Equipements.9",
+      "fer": "start",
+      "col": "#0000ff"
+    },
+    {
+      "x": 1489,
+      "y": 2155,
+      "w": 760,
+      "h": 55,
+      "ref": "Equipements.10",
+      "fer": "start",
+      "col": "#0000ff"
+    },
+    {
+      "x": 1489,
+      "y": 2218,
+      "w": 760,
+      "h": 55,
+      "ref": "Equipements.11",
+      "fer": "start",
+      "col": "#0000ff"
+    },
+    {
+      "x": 1489,
+      "y": 2280,
+      "w": 760,
+      "h": 55,
+      "ref": "Equipements.12",
+      "fer": "start",
+      "col": "#0000ff"
+    },
+    {
+      "x": 1489,
+      "y": 2342,
+      "w": 760,
+      "h": 55,
+      "ref": "Equipements.13",
+      "fer": "start",
+      "col": "#0000ff"
+    },
+    {
+      "x": 1489,
+      "y": 2405,
+      "w": 760,
+      "h": 55,
+      "ref": "Equipements.14",
+      "fer": "start",
+      "col": "#0000ff"
+    },
+    {
+      "x": 1489,
+      "y": 2467,
+      "w": 760,
+      "h": 55,
+      "ref": "Equipements.15",
+      "fer": "start",
+      "col": "#0000ff"
+    },
+    {
+      "x": 300,
+      "y": 1412,
+      "w": 121,
+      "h": 121,
+      "ref": "Caracteristiques.Vigueur.Actuelle",
+      "fer": "middle",
+      "col": "#0000ff"
+    },
+    {
+      "x": 197,
+      "y": 1480,
+      "w": 60,
+      "h": 50,
+      "ref": "Caracteristiques.Vigueur.Max",
+      "fer": "middle",
+      "col": "#0000ff"
+    },
+    {
+      "x": 1275,
+      "y": 1413,
+      "w": 70,
+      "h": 50,
+      "ref": "Caracteristiques.Vigueur.CdM",
+      "fer": "middle",
+      "col": "#0000ff"
+    },
+    {
+      "x": 1275,
+      "y": 1546,
+      "w": 70,
+      "h": 50,
+      "ref": "Caracteristiques.Vigueur.Athletisme",
+      "fer": "middle",
+      "col": "#0000ff"
+    },
+    {
+      "x": 1275,
+      "y": 1606,
+      "w": 70,
+      "h": 50,
+      "ref": "Caracteristiques.Vigueur.Resistance",
+      "fer": "middle",
+      "col": "#0000ff"
+    },
+    {
+      "x": 1275,
+      "y": 1666,
+      "w": 70,
+      "h": 50,
+      "ref": "Caracteristiques.Vigueur.Mecanique",
+      "fer": "middle",
+      "col": "#0000ff"
+    },
+    {
+      "x": 301,
+      "y": 1787,
+      "w": 121,
+      "h": 121,
+      "ref": "Caracteristiques.Agilite.Actuelle",
+      "fer": "middle",
+      "col": "#0000ff"
+    },
+    {
+      "x": 197,
+      "y": 1856,
+      "w": 60,
+      "h": 50,
+      "ref": "Caracteristiques.Agilite.Max",
+      "fer": "middle",
+      "col": "#0000ff"
+    },
+    {
+      "x": 1275,
+      "y": 1789,
+      "w": 70,
+      "h": 50,
+      "ref": "Caracteristiques.Agilite.CdM",
+      "fer": "middle",
+      "col": "#0000ff"
+    },
+    {
+      "x": 1275,
+      "y": 1921,
+      "w": 70,
+      "h": 50,
+      "ref": "Caracteristiques.Agilite.Acrobatie",
+      "fer": "middle",
+      "col": "#0000ff"
+    },
+    {
+      "x": 1275,
+      "y": 1981,
+      "w": 70,
+      "h": 50,
+      "ref": "Caracteristiques.Agilite.Dexterite",
+      "fer": "middle",
+      "col": "#0000ff"
+    },
+    {
+      "x": 1275,
+      "y": 2041,
+      "w": 70,
+      "h": 50,
+      "ref": "Caracteristiques.Agilite.Reflexes",
+      "fer": "middle",
+      "col": "#0000ff"
+    },
+    {
+      "x": 301,
+      "y": 2163,
+      "w": 121,
+      "h": 121,
+      "ref": "Caracteristiques.Esprit.Actuelle",
+      "fer": "middle",
+      "col": "#0000ff"
+    },
+    {
+      "x": 197,
+      "y": 2232,
+      "w": 60,
+      "h": 50,
+      "ref": "Caracteristiques.Esprit.Max",
+      "fer": "middle",
+      "col": "#0000ff"
+    },
+    {
+      "x": 1275,
+      "y": 2165,
+      "w": 70,
+      "h": 50,
+      "ref": "Caracteristiques.Esprit.CdM",
+      "fer": "middle",
+      "col": "#0000ff"
+    },
+    {
+      "x": 1275,
+      "y": 2296,
+      "w": 70,
+      "h": 50,
+      "ref": "Caracteristiques.Esprit.Astuce",
+      "fer": "middle",
+      "col": "#0000ff"
+    },
+    {
+      "x": 1275,
+      "y": 2356,
+      "w": 70,
+      "h": 50,
+      "ref": "Caracteristiques.Esprit.Perception",
+      "fer": "middle",
+      "col": "#0000ff"
+    },
+    {
+      "x": 1275,
+      "y": 2417,
+      "w": 70,
+      "h": 50,
+      "ref": "Caracteristiques.Esprit.Sciences",
+      "fer": "middle",
+      "col": "#0000ff"
+    },
+    {
+      "x": 301,
+      "y": 2541,
+      "w": 121,
+      "h": 121,
+      "ref": "Caracteristiques.Aura.Actuelle",
+      "fer": "middle",
+      "col": "#0000ff"
+    },
+    {
+      "x": 197,
+      "y": 2609,
+      "w": 60,
+      "h": 50,
+      "ref": "Caracteristiques.Aura.Max",
+      "fer": "middle",
+      "col": "#0000ff"
+    },
+    {
+      "x": 1275,
+      "y": 2543,
+      "w": 70,
+      "h": 50,
+      "ref": "Caracteristiques.Aura.CdM",
+      "fer": "middle",
+      "col": "#0000ff"
+    },
+    {
+      "x": 1275,
+      "y": 2674,
+      "w": 70,
+      "h": 50,
+      "ref": "Caracteristiques.Aura.Charisme",
+      "fer": "middle",
+      "col": "#0000ff"
+    },
+    {
+      "x": 1275,
+      "y": 2734,
+      "w": 70,
+      "h": 50,
+      "ref": "Caracteristiques.Aura.Culture",
+      "fer": "middle",
+      "col": "#0000ff"
+    },
+    {
+      "x": 1275,
+      "y": 2795,
+      "w": 70,
+      "h": 50,
+      "ref": "Caracteristiques.Aura.Technique",
+      "fer": "middle",
+      "col": "#0000ff"
+    }
+  ]
+}
