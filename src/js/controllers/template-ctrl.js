@@ -76,6 +76,10 @@ angular
                             vm.Template.Boxes.splice(i, 1);
                         }
                     }
+                } else if (reason === 'clone') {
+                    var lcl =  angular.copy(obj);
+                    vm.Template.Boxes.push(lcl);
+                    angular.copy(org, obj);
                 } else {
                     angular.copy(org, obj);
                 }

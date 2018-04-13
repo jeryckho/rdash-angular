@@ -12,6 +12,10 @@ angular
 			$uibModalInstance.close();
 		};
 
+		$ctrl.clone = function () {
+			$uibModalInstance.dismiss('clone');
+		};
+
 		$ctrl.delete = function () {
 			$uibModalInstance.dismiss('delete');
 		};
