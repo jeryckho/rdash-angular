@@ -2,9 +2,11 @@
  * Dashboard Controller
  */
 
-angular.module("KMS").controller("DashboardCtrl", [
-  function() {
+angular
+  .module("KMS")
+  .controller("DashboardCtrl", ['$rootScope', function ($rootScope) {
     var vm = this;
+    vm.X = $rootScope;
 
     vm.models = [
       { name: "NR", modele: "NR" },
@@ -18,10 +20,7 @@ angular.module("KMS").controller("DashboardCtrl", [
       { name: "Sam", modName: 'NA', modele: "TSA-NA" },
     ];
 
-    vm.unchanged = true;
-
-    vm.closeAlert = function(index) {
+    vm.closeAlert = function (index) {
       vm.unchanged = true;
     };
-  }
-]);
+}]);
