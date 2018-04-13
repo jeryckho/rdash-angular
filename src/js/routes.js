@@ -13,7 +13,8 @@ angular.module('KMS').config(['$stateProvider', '$urlRouterProvider',
         $stateProvider
             .state('index', {
                 url: '/',
-                templateUrl: 'templates/dashboard.html'
+                templateUrl: 'templates/dashboard.html',
+                controller: 'DashboardCtrl as VM'
             })
             .state('fiche', {
                 url: '/fiche/:Tpl/:Sht',

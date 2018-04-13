@@ -1,7 +1,7 @@
 <div class="row alerts-container" data-ng-controller="AlertsCtrl" data-ng-show="alerts.length">
-  <div class="col-xs-12">
-    <uib-alert data-ng-repeat="alert in alerts" type="{{alert.type}}" close="closeAlert($index)">{{alert.msg}}</uib-alert>
-  </div>
+	<div class="col-xs-12">
+		<uib-alert data-ng-repeat="alert in alerts" type="{{alert.type}}" close="closeAlert($index)">{{alert.msg}}</uib-alert>
+	</div>
 </div>
 
 <div class="row">
@@ -11,7 +11,7 @@
 				<div class="widget-icon red pull-left">
 					<i class="fa fa-list-alt"></i>
 				</div>
-				<div class="title">16</div>
+				<div class="title">{{ VM.models.length }}</div>
 				<div class="comment">Modèles</div>
 			</rd-widget-body>
 		</rd-widget>
@@ -22,7 +22,7 @@
 				<div class="widget-icon green pull-left">
 					<i class="fa fa-id-badge"></i>
 				</div>
-				<div class="title">80</div>
+				<div class="title">{{VM.chars.length}}</div>
 				<div class="comment">Persos</div>
 			</rd-widget-body>
 		</rd-widget>
@@ -33,7 +33,7 @@
 				<div class="widget-icon orange pull-left">
 					<i class="fa fa-address-card-o"></i>
 				</div>
-				<div class="title">225</div>
+				<div class="title">{{VM.chars.length * VM.models.length}}</div>
 				<div class="comment">Fiches</div>
 			</rd-widget-body>
 		</rd-widget>
@@ -43,24 +43,24 @@
 <div class="row">	
 	<div class="col-lg-6">
 		<rd-widget>
-      		<rd-widget-header icon="fa fa-list-alt" title="Templates">
-				<a href="#">Manage</a>
-      		</rd-widget-header>
-      		<rd-widget-body classes="medium no-padding">
+			<rd-widget-header icon="fa fa-list-alt" title="Modèles">
+				<input type="text" placeholder="Search" class="form-control input-sm" ng-model="VM.searchMod"/>
+			</rd-widget-header>
+			<rd-widget-body classes="medium no-padding">
 				<div class="table-responsive">
 					<table class="table">
+						<thead>
+							<tr><th>Modèle</th><th class="text-center">Détails</th></tr>
+						</thead>
 						<tbody>
-							<tr><td>RDVMPC001</td><td>238.103.133.37</td><td><span class="text-success"><i class="fa fa-check"></i></span></td></tr>
-							<tr><td>RDVMPC002</td><td>68.66.63.170</td><td><span class="text-success"><i class="fa fa-check"></i></span></td></tr>
-							<tr><td>RDVMPC003</td><td>76.117.212.33</td><td><span tooltip="Server Down!" class="text-danger"><i class="fa fa-warning"></i></span></td></tr>
-							<tr><td>RDPHPC001</td><td>91.88.224.5</td><td><span class="text-success"><i class="fa fa-check"></i></span></td></tr>
-							<tr><td>RDESX001</td><td>197.188.15.93</td><td><span class="text-success"><i class="fa fa-check"></i></span></td></tr>
-							<tr><td>RDESX002</td><td>168.85.154.251</td><td><span class="text-success"><i class="fa fa-check"></i></span></td></tr>
-							<tr><td>RDESX003</td><td>209.25.191.61</td><td><span tooltip="Server Down!" class="text-danger"><i class="fa fa-warning"></i></span></td></tr>
-							<tr><td>RDESX004</td><td>252.37.192.235</td><td><span class="text-success"><i class="fa fa-check"></i></span></td></tr>
-							<tr><td>RDTerminal01</td><td>139.71.18.207</td><td><span class="text-success"><i class="fa fa-check"></i></span></td></tr>
-							<tr><td>RDTerminal02</td><td>136.80.122.212</td><td><span tooltip="Could not connect!" class="text-warning"><i class="fa fa-flash"></i></span></td></tr>
-							<tr><td>RDDomainCont01</td><td>196.80.245.33</td><td><span class="text-success"><i class="fa fa-check"></i></span></td></tr>
+							<tr ng-repeat="mod in VM.models | filter:VM.searchMod">
+								<td>{{ mod.name }}</td>
+								<td class="text-center">
+									<a ng-href="{{ '#/template/' + mod.modele }}">
+										<i class="fa fa-list-alt"></i>
+									</a>
+								</td>
+							</tr>
 						</tbody>
 					</table>
 				</div>
@@ -70,51 +70,33 @@
 	<div class="col-lg-6">
 		<rd-widget>
 			<rd-widget-header icon="fa fa-id-badge" title="Personnages">
-				<input type="text" placeholder="Search" class="form-control input-sm" />
+				<input type="text" placeholder="Search" class="form-control input-sm" ng-model="VM.searchChar" />
 			</rd-widget-header>
 			<rd-widget-body classes="medium no-padding">
 				<div class="table-responsive">
 					<table class="table">
 						<thead>
-							<tr><th>Nom</th><th class="text-center">Modèle</th><th class="text-center">Détails</th><th class="text-center">Fiche</th></tr>
+							<tr><th>Nom</th><th class="text-center">Modèle</th><th class="text-center">Fiche</th><th class="text-center">Détails</th></tr>
 						</thead>
 						<tbody>
-							<tr><td>Jigano</td><td class="text-center">SW</td><td class="text-center"><a href="#/fiche/TSA-SW/Jigano"><i class="fa fa-address-card-o"></i></a></td><td class="text-center"><a href="#/char/Jigano"><i class="fa fa-id-badge"></i></a></td></tr>
-							<tr><td>Sam</td><td class="text-center">NA</td><td class="text-center"><a href="#/fiche/TSA-NA/Sam"><i class="fa fa-address-card-o"></i></a></td><td class="text-center"><a href="#/char/Sam"><i class="fa fa-id-badge"></i></a></td></tr>
-							<tr><td>Seal</td><td class="text-center">SW</td><td class="text-center"><a href="#/fiche/TSA-SW/Seal"><i class="fa fa-address-card-o"></i></a></td><td class="text-center"><a href="#/char/Seal"><i class="fa fa-id-badge"></i></a></td></tr>
+							<tr ng-repeat="char in VM.chars | filter:VM.searchChar">
+								<td>{{ char.name }}</td>
+								<td class="text-center">{{ char.modName }}</td>
+								<td class="text-center">
+									<a ng-href="{{'#/fiche/'+char.modele+'/'+char.name}}">
+										<i class="fa fa-address-card-o"></i>
+									</a>
+								</td>
+								<td class="text-center">
+									<a ng-href="{{'#/char/'+char.name}}">
+										<i class="fa fa-id-badge"></i>
+									</a>
+								</td>
+							</tr>
 						</tbody>
 					</table>
-        		</div>
+				</div>
 			</rd-widget-body>
 		<rd-widget>
-	</div>
-</div>
-
-<div class="row">
-	<div class="col-lg-6">
-   		<rd-widget>
-   			<rd-widget-header icon="fa-plus" title="Extras">
-   				<button class="btn btn-sm btn-info">Button</button>
-   			</rd-widget-header>
-   			<rd-widget-body>
-				<div class="message">
-					This is a standard message which will also work the ".no-padding" class, I can also <span class="error">be an error message!</span>
-				</div>
-				<hr />
-				<div class="message">
-					<a href="http://angular-ui.github.io/bootstrap/" target="_blank">UI Bootstrap</a> is included, so you can use <a href="#" tooltip="I'm a tooltip!">tooltips</a> and all of the other native Bootstrap JS components!
-				</div>
-   			</rd-widget-body>
-   		</rd-widget>
-	</div>
-	<div class="col-lg-6">
-		<rd-widget>
-			<rd-widget-header icon="fa fa-cog fa-spin" title="Loading Directive">
-				<a href="http://tobiasahlin.com/spinkit/" target="_blank">SpinKit</a>
-			</rd-widget-header>
-			<rd-widget-body>
-				<rd-loading></rd-loading>
-			</rd-widget-body>
-		</rd-widget>
 	</div>
 </div>
