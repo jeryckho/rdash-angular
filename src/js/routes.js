@@ -3,8 +3,8 @@
 /**
  * Route configuration for the RDash module.
  */
-angular.module('RDash').config(['$stateProvider', '$urlRouterProvider',
-    function($stateProvider, $urlRouterProvider) {
+angular.module('KMS').config(['$stateProvider', '$urlRouterProvider',
+    function ($stateProvider, $urlRouterProvider) {
 
         // For unmatched routes
         $urlRouterProvider.otherwise('/');
@@ -15,9 +15,20 @@ angular.module('RDash').config(['$stateProvider', '$urlRouterProvider',
                 url: '/',
                 templateUrl: 'templates/dashboard.html'
             })
-            .state('tables', {
-                url: '/tables',
-                templateUrl: 'templates/tables.html'
+            .state('fiche', {
+                url: '/fiche/:Tpl/:Sht',
+                templateUrl: 'templates/fiche.html',
+                controller: 'SheetCtrl as VM'
+            })
+            .state('char', {
+                url: '/char/:Sht',
+                templateUrl: 'templates/character.html',
+                controller: 'CharacterCtrl as VM'
+            })
+            .state('template', {
+                url: '/template/:Tpl',
+                templateUrl: 'templates/template.html',
+                controller: 'TemplateCtrl as VM'
             });
     }
 ]);

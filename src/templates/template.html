@@ -1,0 +1,31 @@
+<!--{{ VM.Params.Id }} - {{ VM.RCT | json }} - {{VM.RCTs | json}}-->
+<svg ng-show="VM.Status == 'OK'" id="Tpl" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0" y="0" width="100%" viewbox="0 0 0 0"
+	ng-attr-view_box="{{ VM.Template.ViewBox() }}">
+	<defs>
+	</defs>
+	<!--Fond de Page-->
+	<g>
+		<image xlink:href="" ng-attr-xlink:href="{{ VM.Template.Fond.Src }}"
+			x="0" y="0" width="1" height="1" ng-attr-width="{{ VM.Template.Fond.Width }}" ng-attr-height="{{ VM.Template.Fond.Height }}"></image>
+	</g>
+	<!--Zone de sélection-->
+	<g>
+		<rect x="0" y="0" width="1" height="1" ng-attr-x="{{ VM.RCT.x }}" ng-attr-y="{{ VM.RCT.y }}" ng-attr-width="{{ VM.RCT.w }}" ng-attr-height="{{ VM.RCT.h }}"
+			fill="green" stroke="none" fill-opacity="0.6"></rect>
+	</g>
+	<!--Rectangle de Fond-->
+	<g ng-click="VM.Clk($event)" ng-mousemove="VM.Mov($event)">
+		<rect x="0" y="0" width="1" height="1" ng-attr-width="{{ VM.Template.Fond.Width }}" ng-attr-height="{{ VM.Template.Fond.Height }}"
+			fill="white" stroke="none" fill-opacity="0.01"></rect>
+	</g>
+	<!--Zones existantes-->
+	<g ng-repeat="rct in VM.Template.Boxes" ng-click="VM.Open(rct)" ng-mousemove="VM.Mov($event)">
+		<rect x="0" y="0" width="1" height="1" ng-attr-x="{{rct.x }}" ng-attr-y="{{ rct.y }}" ng-attr-width="{{ rct.w }}" ng-attr-height="{{ rct.h }}"
+			fill="blue" stroke="none" fill-opacity="0.6"></rect>
+	</g>
+</svg>
+<aside></aside>
+<div ng-if="VM.Status == 'KO'">Ce template n'existe pas...</div>
+<pre>
+{{  VM.Template | json }}
+</pre>

@@ -3,7 +3,7 @@
  */
 
 angular
-    .module('RDash')
+    .module('KMS')
     .directive('rdWidgetFooter', rdWidgetFooter);
 
 function rdWidgetFooter() {

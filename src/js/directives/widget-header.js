@@ -3,7 +3,7 @@
  */
 
 angular
-    .module('RDash')
+    .module('KMS')
     .directive('rdWidgetHeader', rdWidgetTitle);
 
 function rdWidgetTitle() {

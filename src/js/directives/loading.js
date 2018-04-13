@@ -4,7 +4,7 @@
  */
 
 angular
-    .module('RDash')
+    .module('KMS')
     .directive('rdLoading', rdLoading);
 
 function rdLoading() {
