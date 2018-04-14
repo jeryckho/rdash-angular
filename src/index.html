@@ -11,6 +11,7 @@
   <link rel="stylesheet" type="text/css" href="components/bootstrap/dist/css/bootstrap.min.css">
   <link rel="stylesheet" type="text/css" href="components/font-awesome/css/font-awesome.min.css">
   <link rel="stylesheet" type="text/css" href="components/rdash-ui/dist/css/rdash.min.css">
+  <link rel="stylesheet" type="text/css" href="css/style.css">
   <!-- endbuild -->
   <!-- SCRIPTS -->
   <!-- build:js lib/js/main.min.js -->
@@ -42,7 +43,7 @@
   <!-- endbuild -->
 </head>
 <body ng-controller="MasterCtrl">
-  <div id="page-wrapper" ng-class="{'open': toggle}" ng-cloak>
+  <div id="page-wrapper" ng-class="{'open': toggle}" ng-cloak ng-show="1">
 
     <!-- Sidebar -->
     <div id="sidebar-wrapper">
@@ -63,5 +64,24 @@
       </div><!-- End Page Content -->
     </div><!-- End Content Wrapper -->
   </div><!-- End Page Wrapper -->
+
+  <div id="page-login" ng-cloak ng-show="0" class="vertical-center">
+      <div class="container col-sm-4">
+          <form name="loginForm" novalidate>
+              <div class="form-group">
+                  <label for="username">Utilisateur</label>
+                  <input ng-model="username" type="text" id="username" name="username" class="form-control" placeholder="Entrez votre nom" autofocus="true" autocomplete="off" required>
+              </div>
+              <div class="form-group">
+                  <label for="password">Mot de passe</label>
+                  <input ng-model="password" type="password" id="password" name="password" class="form-control" placeholder="Entrez votre mot de passe" required>
+              </div>
+              <div class="form-group">
+                  <button class="btn btn-primary">Se connecter</button>
+              </div>
+          </form>
+      </div>    
+  </div>
+
 </body>
 </html>
