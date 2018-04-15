@@ -43,7 +43,7 @@ angular
                 .then(function (SvcTpl) {
                     return $q(function (resolve, reject) {
                         $http.get('data/' + sht + '.json').success(function (data) {
-                            svc.Template = SvcTpl;
+                            svc.Template = SvcTpl.Datas;
                             svc.Datas = data;
                             resolve(svc);
                         }).error(function () {

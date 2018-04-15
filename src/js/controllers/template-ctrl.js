@@ -23,7 +23,7 @@ angular
 
             if (From.x != 0 && From.y != 0) {
                 From = { x: 0, y: 0 };
-                vm.Template.Boxes.push(vm.RCT);
+                vm.Template.Datas.Boxes.push(vm.RCT);
             } else {
                 From = { x: ptm.x, y: ptm.y };
             }
@@ -71,14 +71,14 @@ angular
             }, function (reason) {
                 if (reason === 'delete') {
                     angular.copy({todel:1}, obj);
-                    for(var i = vm.Template.Boxes.length - 1; i >= 0; i--) {
-                        if(vm.Template.Boxes[i].todel === 1) {
-                            vm.Template.Boxes.splice(i, 1);
+                    for(var i = vm.Template.Datas.Boxes.length - 1; i >= 0; i--) {
+                        if(vm.Template.Datas.Boxes[i].todel === 1) {
+                            vm.Template.Datas.Boxes.splice(i, 1);
                         }
                     }
                 } else if (reason === 'clone') {
                     var lcl =  angular.copy(obj);
-                    vm.Template.Boxes.push(lcl);
+                    vm.Template.Datas.Boxes.push(lcl);
                     angular.copy(org, obj);
                 } else {
                     angular.copy(org, obj);

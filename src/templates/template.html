@@ -5,8 +5,8 @@
 	</defs>
 	<!--Fond de Page-->
 	<g>
-		<image xlink:href="" ng-attr-xlink:href="{{ VM.Template.Fond.Src }}"
-			x="0" y="0" width="1" height="1" ng-attr-width="{{ VM.Template.Fond.Width }}" ng-attr-height="{{ VM.Template.Fond.Height }}"></image>
+		<image xlink:href="" ng-attr-xlink:href="{{ VM.Template.Datas.Fond.Src }}"
+			x="0" y="0" width="1" height="1" ng-attr-width="{{ VM.Template.Datas.Fond.Width }}" ng-attr-height="{{ VM.Template.Datas.Fond.Height }}"></image>
 	</g>
 	<!--Zone de sélection-->
 	<g>
@@ -15,11 +15,11 @@
 	</g>
 	<!--Rectangle de Fond-->
 	<g ng-click="VM.Clk($event)" ng-mousemove="VM.Mov($event)">
-		<rect x="0" y="0" width="1" height="1" ng-attr-width="{{ VM.Template.Fond.Width }}" ng-attr-height="{{ VM.Template.Fond.Height }}"
+		<rect x="0" y="0" width="1" height="1" ng-attr-width="{{ VM.Template.Datas.Fond.Width }}" ng-attr-height="{{ VM.Template.Datas.Fond.Height }}"
 			fill="white" stroke="none" fill-opacity="0.01"></rect>
 	</g>
 	<!--Zones existantes-->
-	<g ng-repeat="rct in VM.Template.Boxes" ng-click="VM.Open(rct)" ng-mousemove="VM.Mov($event)">
+	<g ng-repeat="rct in VM.Template.Datas.Boxes" ng-click="VM.Open(rct)" ng-mousemove="VM.Mov($event)">
 		<rect x="0" y="0" width="1" height="1" ng-attr-x="{{rct.x }}" ng-attr-y="{{ rct.y }}" ng-attr-width="{{ rct.w }}" ng-attr-height="{{ rct.h }}"
 			fill="blue" stroke="none" fill-opacity="0.6"></rect>
 	</g>
@@ -27,6 +27,6 @@
 <aside></aside>
 <div ng-if="VM.Status == 'KO'">Ce template n'existe pas...</div>
 <pre ng-show="VM.check">
-{{ VM.Template | json }}
+{{ VM.Template.Datas | json }}
 </pre>
 <label for="dbg">Afficher Données :&nbsp;</label> <input id="dbg" type="checkbox" ng-model="VM.check"/>
