@@ -3,13 +3,14 @@
  */
 
 angular.module('KMS')
-    .controller('MasterCtrl', ['$scope', '$cookieStore', MasterCtrl]);
+    .controller('MasterCtrl', ['$scope', '$cookieStore', 'FB', MasterCtrl]);
 
-function MasterCtrl($scope, $cookieStore) {
+function MasterCtrl($scope, $cookieStore, FB) {
     /**
      * Sidebar Toggle & Cookie Control
      */
     var mobileView = 992;
+    $scope.login = false;
 
     $scope.getWidth = function() {
         return window.innerWidth;
@@ -36,4 +37,6 @@ function MasterCtrl($scope, $cookieStore) {
     window.onresize = function() {
         $scope.$apply();
     };
+
+    $scope.users = FB.GetObject('users');
 }

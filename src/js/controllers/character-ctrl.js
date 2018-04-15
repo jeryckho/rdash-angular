@@ -21,7 +21,7 @@ angular
         };
         var editor = new JSONEditor(container, options);
 
-        vm.Sheet.GetSheet($stateParams.Sht)
+        vm.Sheet.GetCopySheet($stateParams.Sht)
             .then(function () {
                 vm.Status = 'OK'
                 editor.set(vm.Sheet.Datas);
@@ -36,6 +36,7 @@ angular
 
         vm.Save = function () {
             vm.Sheet.Datas = editor.get();
+            vm.Sheet.SetCopySheet($stateParams.Sht);
             vm.unchanged = true;
         }
 

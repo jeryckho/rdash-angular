@@ -1,6 +1,6 @@
 angular
     .module('KMS')
-    .factory('Sheet', ['$http', '$q', 'Template', function ($http, $q, Template) {
+    .factory('Sheet', ['$http', '$q', 'Template', 'FB', function ($http, $q, Template, FB) {
         var svc = {
             Template: {},
             Datas: {}
@@ -16,6 +16,26 @@ angular
                     reject(svc);
                 });
             });
+        }
+
+        svc.GetCopySheet = function (id) {
+            return $q(function (resolve, reject) {
+                var datas = FB.GetObject('sheets/' + id);
+                datas.$loaded().then(function () {
+                    angular.copy(datas, svc.Datas);
+                    delete svc.Datas["$$conf"];
+                    delete svc.Datas["$id"];
+                    delete svc.Datas["$priority"];
+                    delete svc.Datas["$resolved"];
+                    resolve(svc);
+                })
+            });
+        }
+
+        svc.SetCopySheet = function(id) {
+            var data = FB.GetObject('sheets/'+id);
+            angular.copy( svc.Datas, data);
+            data.$save()
         }
 
         svc.Get = function (tpl, sht) {
