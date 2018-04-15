@@ -6,6 +6,8 @@ angular
             Datas: {}
         };
 
+        svc.ViewBox = function () { return "0 0 " + svc.Template.Fond.Width + " " + svc.Template.Fond.Height; }
+
         svc.GetSheet = function (id) {
             return $q(function (resolve, reject) {
                 $http.get('data/' + id + '.json').success(function (data) {
@@ -57,6 +59,16 @@ angular
                     svc.Template = {};
                     return $q.reject(svc);
                 });
+        }
+
+        svc.GetCopy = function (tpl, sht) {
+            return Template.GetCopy(tpl)
+                .then(function(SvcTpl){
+                    return svc.GetCopySheet(sht)
+                        .then(function(SvcSht){
+                            svc.Template = SvcTpl.Datas;
+                        });
+                });  
         }
 
         svc.Find = function (ref) {

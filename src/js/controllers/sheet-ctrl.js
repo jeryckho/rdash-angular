@@ -9,7 +9,7 @@ angular
 
         vm.Status = '';
         vm.Sheet = Sheet;
-        vm.Sheet.Get($stateParams.Tpl, $stateParams.Sht)
+        vm.Sheet.GetCopy($stateParams.Tpl, $stateParams.Sht)
             .then(function () {
                 vm.Status = 'OK'
             }, function () {

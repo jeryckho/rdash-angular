@@ -8,7 +8,7 @@ angular
         var vm = this;
         vm.Status = '';
         vm.Template = Template;
-        vm.Template.Get($stateParams.Tpl)
+        vm.Template.GetCopy($stateParams.Tpl)
             .then(function () {
                 vm.Status = 'OK'
             }, function () {
@@ -23,7 +23,11 @@ angular
 
             if (From.x != 0 && From.y != 0) {
                 From = { x: 0, y: 0 };
-                vm.Template.Datas.Boxes.push(vm.RCT);
+                if (vm.Template.Datas.Boxes) {
+                    vm.Template.Datas.Boxes.push(vm.RCT);
+                } else {
+                    vm.Template.Datas.Boxes = [ vm.RCT ];
+                }
             } else {
                 From = { x: ptm.x, y: ptm.y };
             }
