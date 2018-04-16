@@ -15,7 +15,7 @@ angular
 
 		svc.ViewBox = function () { return "0 0 " + svc.Datas.Fond.Width + " " + svc.Datas.Fond.Height; }
 
-		svc.GetCopy = function (id) {
+		svc.GetClone = function (id) {
 			return $q(function (resolve, reject) {
 				var datas = FB.GetObject('templates/' + id);
 				datas.$loaded().then(function () {
@@ -37,7 +37,7 @@ angular
 			});
 		}
 
-		svc.SetCopy = function(id) {
+		svc.SetClone = function(id) {
 			var data = FB.GetObject('templates/'+id);
 			angular.copy( svc.Datas, data);
 			data.$save();

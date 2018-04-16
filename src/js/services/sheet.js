@@ -18,7 +18,7 @@ angular
 			});
 		}
 
-		svc.GetCopySheet = function (id) {
+		svc.GetCloneSheet = function (id) {
 			return $q(function (resolve, reject) {
 				var datas = FB.GetObject('sheets/' + id);
 				datas.$loaded().then(function () {
@@ -33,14 +33,14 @@ angular
 			});
 		}
 
-		svc.SetCopySheet = function(id) {
+		svc.SetCloneSheet = function(id) {
 			var data = FB.GetObject('sheets/'+id);
 			angular.copy( svc.Datas, data);
 			data.$save()
 		}
 
 		svc.Get = function (tpl, sht) {
-			return Template.GetCopy(tpl)
+			return Template.GetClone(tpl)
 				.then(function(SvcTpl){
 					return svc.GetSheet(sht)
 						.then(function(SvcSht){
@@ -49,10 +49,10 @@ angular
 				});
 		}
 
-		svc.GetCopy = function (tpl, sht) {
-			return Template.GetCopy(tpl)
+		svc.GetClone = function (tpl, sht) {
+			return Template.GetClone(tpl)
 				.then(function(SvcTpl){
-					return svc.GetCopySheet(sht)
+					return svc.GetCloneSheet(sht)
 						.then(function(SvcSht){
 							svc.Template = SvcTpl.Datas;
 						});
