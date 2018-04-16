@@ -43,17 +43,5 @@ angular
 			data.$save();
 		}
 
-		svc.Get = function (id) {
-			return $q(function (resolve, reject) {
-				$http.get('data/' + id + '.json').success(function (data) {
-					angular.extend(svc.Datas, data);
-					resolve(svc);
-				}).error(function () {
-					angular.extend(svc.Datas, org);
-					reject(svc);
-				});
-			});
-		}
-
 		return svc;
 	}]);
