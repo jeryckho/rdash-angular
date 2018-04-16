@@ -4,21 +4,17 @@
 
 angular
   .module("KMS")
-  .controller("DashboardCtrl", ['$rootScope', function ($rootScope) {
+  .controller("DashboardCtrl", ['$rootScope', 'FB', function ($rootScope, FB) {
     var vm = this;
     vm.X = $rootScope;
-
-    vm.models = [
-      { name: "NR", modele: "NR" },
-      { name: "SW", modele: "TSA-SW" },
-      { name: "NA", modele: "TSA-NA" }
-    ];
-
-    vm.chars = [
-      { name: "Jigano", modName: 'NR', modele: "NR" },
-      { name: "Seal", modName: 'SW', modele: "TSA-SW" },
-      { name: "Sam", modName: 'NA', modele: "TSA-NA" },
-    ];
+    vm.models = [];
+    vm.chars = [];
+    FB.GetObject('gene')
+      .$loaded()
+      .then(function(res){
+        vm.models = Object.keys(res.templates);
+        vm.chars = Object.keys(res.sheets);
+      });
 
     vm.closeAlert = function (index) {
       vm.unchanged = true;

@@ -85,7 +85,7 @@
 				<div class="widget-icon green pull-left">
 					<i class="fa fa-id-badge"></i>
 				</div>
-				<div class="title">{{VM.chars.length}}</div>
+				<div class="title">{{ VM.chars.length }}</div>
 				<div class="comment">Persos</div>
 			</rd-widget-body>
 		</rd-widget>
@@ -96,7 +96,7 @@
 				<div class="widget-icon orange pull-left">
 					<i class="fa fa-address-card-o"></i>
 				</div>
-				<div class="title">{{VM.chars.length * VM.models.length}}</div>
+				<div class="title">{{ VM.models.length * VM.chars.length }}</div>
 				<div class="comment">Fiches</div>
 			</rd-widget-body>
 		</rd-widget>
@@ -116,10 +116,10 @@
 							<tr><th>Modèle</th><th class="text-center">Détails</th></tr>
 						</thead>
 						<tbody>
-							<tr ng-repeat="mod in VM.models | filter:VM.X.searchMod">
-								<td>{{ mod.name }}</td>
+							<tr ng-repeat="modl in VM.models | filter:VM.X.searchMod">
+								<td>{{ modl }}</td>
 								<td class="text-center">
-									<a ng-href="{{ '#/template/' + mod.modele }}">
+									<a ng-href="{{ '#/template/' + modl }}">
 										<i class="fa fa-list-alt"></i>
 									</a>
 								</td>
@@ -139,19 +139,13 @@
 				<div class="table-responsive">
 					<table class="table">
 						<thead>
-							<tr><th>Nom</th><th class="text-center">Modèle</th><th class="text-center">Fiche</th><th class="text-center">Détails</th></tr>
+							<tr><th>Nom</th><th class="text-center">Détails</th></tr>
 						</thead>
 						<tbody>
 							<tr ng-repeat="char in VM.chars | filter:VM.X.searchChar">
-								<td>{{ char.name }}</td>
-								<td class="text-center">{{ char.modName }}</td>
+								<td>{{ char }}</td>
 								<td class="text-center">
-									<a ng-href="{{'#/fiche/'+char.modele+'/'+char.name}}">
-										<i class="fa fa-address-card-o"></i>
-									</a>
-								</td>
-								<td class="text-center">
-									<a ng-href="{{'#/char/'+char.name}}">
+									<a ng-href="{{'#/char/'+char}}">
 										<i class="fa fa-id-badge"></i>
 									</a>
 								</td>
