@@ -103,7 +103,7 @@
 	</div>
 </div>
 
-<div class="row">	
+<div class="row">
 	<div class="col-lg-6">
 		<rd-widget>
 			<rd-widget-header icon="fa fa-list-alt text-danger" title="Modèles">
@@ -116,7 +116,7 @@
 							<tr><th>Modèle</th><th class="text-center">Détails</th></tr>
 						</thead>
 						<tbody>
-							<tr ng-repeat="modl in VM.models | filter:VM.X.searchMod">
+							<tr ng-repeat="modl in VM.models | filter:VM.X.searchMod" ng-class="{active:(VM.X.selMod==modl)}" ng-click="VM.X.selMod=modl">
 								<td>{{ modl }}</td>
 								<td class="text-center">
 									<a ng-href="{{ '#/template/' + modl }}">
@@ -149,7 +149,7 @@
 							<tr><th>Nom</th><th class="text-center">Détails</th></tr>
 						</thead>
 						<tbody>
-							<tr ng-repeat="char in VM.chars | filter:VM.X.searchChar">
+							<tr ng-repeat="char in VM.chars | filter:VM.X.searchChar" ng-class="{active:(VM.X.selChar==char)}" ng-click="VM.X.selChar=char">
 								<td>{{ char }}</td>
 								<td class="text-center">
 									<a ng-href="{{'#/char/'+char}}">
@@ -169,5 +169,19 @@
 				</div>
 			</rd-widget-footer>
 		<rd-widget>
+	</div>
+</div>
+
+<div class="row" ng-show="!!VM.X.selChar && !!VM.X.selMod">
+	<div class="col-lg-offset-3 col-lg-6 col-md-offset-3 col-md-6 col-xs-12">
+		<rd-widget>
+			<rd-widget-body>
+				<div class="widget-icon orange pull-left">
+					<i class="fa fa-address-card-o"></i>
+				</div>
+				<div class="title">{{VM.X.selMod+' / '+VM.X.selChar}}</div>
+				<div class="comment"><a ng-href="{{'#/fiche/'+VM.X.selMod+'/'+VM.X.selChar}}">Voir la Fiche</a></div>
+			</rd-widget-body>
+		</rd-widget>
 	</div>
 </div>
