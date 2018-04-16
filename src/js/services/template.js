@@ -22,6 +22,7 @@ angular
                     angular.copy(datas, svc.Datas);
                     delete svc.Datas["$$conf"];
                     delete svc.Datas["$id"];
+                    delete svc.Datas["$value"];
                     delete svc.Datas["$priority"];
                     delete svc.Datas["$resolved"];
                     resolve(svc);
