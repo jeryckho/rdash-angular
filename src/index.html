@@ -1,88 +1,88 @@
 <!doctype html>
 <html lang="fr" ng-app="KMS">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 
 	<title>Keep My Sheets</title>
-  <!-- STYLES -->
-  <!-- build:css lib/css/main.min.css -->
-  <link rel="stylesheet" type="text/css" href="components/jsoneditor/dist/jsoneditor.min.css">
-  <link rel="stylesheet" type="text/css" href="components/bootstrap/dist/css/bootstrap.min.css">
-  <link rel="stylesheet" type="text/css" href="components/font-awesome/css/font-awesome.min.css">
-  <link rel="stylesheet" type="text/css" href="components/rdash-ui/dist/css/rdash.min.css">
-  <link rel="stylesheet" type="text/css" href="css/style.css">
-  <!-- endbuild -->
-  <!-- SCRIPTS -->
-  <!-- build:js lib/js/main.min.js -->
-  <script type="text/javascript" src="components/angular/angular.min.js"></script>
-  <script type="text/javascript" src="components/firebase/firebase.js"></script>
-  <script type="text/javascript" src="components/angularfire/dist/angularfire.min.js"></script>
-  <script type="text/javascript" src="components/angular-bootstrap/ui-bootstrap-tpls.min.js"></script>
-  <script type="text/javascript" src="components/angular-cookies/angular-cookies.min.js"></script>
-  <script type="text/javascript" src="components/angular-ui-router/release/angular-ui-router.min.js"></script>
-  <script type="text/javascript" src="components/jsoneditor/dist/jsoneditor-minimalist.min.js"></script>
-  <!-- endbuild -->
-  <!-- Custom Scripts -->
-  <!-- build:jsp js/dashboard.min.js -->
-  <script type="text/javascript" src="js/module.js"></script>
-  <script type="text/javascript" src="js/services/template.js"></script>
-  <script type="text/javascript" src="js/services/sheet.js"></script>
-  <script type="text/javascript" src="js/services/svg-utils.js"></script>
-  <script type="text/javascript" src="js/controllers/alert-ctrl.js"></script>
-  <script type="text/javascript" src="js/controllers/master-ctrl.js"></script>
-  <script type="text/javascript" src="js/controllers/sheet-ctrl.js"></script>
-  <script type="text/javascript" src="js/controllers/character-ctrl.js"></script>
-  <script type="text/javascript" src="js/controllers/template-ctrl.js"></script>
-  <script type="text/javascript" src="js/controllers/modal-instance-ctrl.js"></script>
-  <script type="text/javascript" src="js/directives/loading.js"></script>
-  <script type="text/javascript" src="js/directives/widget-body.js"></script>
-  <script type="text/javascript" src="js/directives/widget-footer.js"></script>
-  <script type="text/javascript" src="js/directives/widget-header.js"></script>
-  <script type="text/javascript" src="js/directives/widget.js"></script>
-  <script type="text/javascript" src="js/directives/sidebar-item.js"></script>
-  <script type="text/javascript" src="js/routes.js"></script>
-  <!-- endbuild -->
+	<!-- STYLES -->
+	<!-- build:css lib/css/main.min.css -->
+	<link rel="stylesheet" type="text/css" href="components/jsoneditor/dist/jsoneditor.min.css">
+	<link rel="stylesheet" type="text/css" href="components/bootstrap/dist/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="components/font-awesome/css/font-awesome.min.css">
+	<link rel="stylesheet" type="text/css" href="components/rdash-ui/dist/css/rdash.min.css">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<!-- endbuild -->
+	<!-- SCRIPTS -->
+	<!-- build:js lib/js/main.min.js -->
+	<script type="text/javascript" src="components/angular/angular.min.js"></script>
+	<script type="text/javascript" src="components/firebase/firebase.js"></script>
+	<script type="text/javascript" src="components/angularfire/dist/angularfire.min.js"></script>
+	<script type="text/javascript" src="components/angular-bootstrap/ui-bootstrap-tpls.min.js"></script>
+	<script type="text/javascript" src="components/angular-cookies/angular-cookies.min.js"></script>
+	<script type="text/javascript" src="components/angular-ui-router/release/angular-ui-router.min.js"></script>
+	<script type="text/javascript" src="components/jsoneditor/dist/jsoneditor-minimalist.min.js"></script>
+	<!-- endbuild -->
+	<!-- Custom Scripts -->
+	<!-- build:jsp js/dashboard.min.js -->
+	<script type="text/javascript" src="js/module.js"></script>
+	<script type="text/javascript" src="js/services/template.js"></script>
+	<script type="text/javascript" src="js/services/sheet.js"></script>
+	<script type="text/javascript" src="js/services/svg-utils.js"></script>
+	<script type="text/javascript" src="js/controllers/alert-ctrl.js"></script>
+	<script type="text/javascript" src="js/controllers/master-ctrl.js"></script>
+	<script type="text/javascript" src="js/controllers/sheet-ctrl.js"></script>
+	<script type="text/javascript" src="js/controllers/character-ctrl.js"></script>
+	<script type="text/javascript" src="js/controllers/template-ctrl.js"></script>
+	<script type="text/javascript" src="js/controllers/modal-instance-ctrl.js"></script>
+	<script type="text/javascript" src="js/directives/loading.js"></script>
+	<script type="text/javascript" src="js/directives/widget-body.js"></script>
+	<script type="text/javascript" src="js/directives/widget-footer.js"></script>
+	<script type="text/javascript" src="js/directives/widget-header.js"></script>
+	<script type="text/javascript" src="js/directives/widget.js"></script>
+	<script type="text/javascript" src="js/directives/sidebar-item.js"></script>
+	<script type="text/javascript" src="js/routes.js"></script>
+	<!-- endbuild -->
 </head>
 <body ng-controller="MasterCtrl">
-  <div id="page-wrapper" ng-class="{'open': toggle}" ng-cloak ng-hide="{{login}}">
+	<div id="page-wrapper" ng-class="{'open': toggle}" ng-cloak ng-hide="{{login}}">
 
-    <!-- Sidebar -->
-    <div id="sidebar-wrapper">
-      <ul class="sidebar">
-        <li class="sidebar-main"> <a ng-click="toggleSidebar()"> KMS <span class="menu-icon glyphicon glyphicon-transfer"></span> </a> </li>
-        <li class="sidebar-title"><span>NAVIGATION</span></li>
-        <rd-sidebar-item icon="fa fa-tachometer" target="#">Tableau de bord</rd-sidebar-item>
-      </ul>
-    </div>
-    <!-- End Sidebar -->
+		<!-- Sidebar -->
+		<div id="sidebar-wrapper">
+			<ul class="sidebar">
+				<li class="sidebar-main"> <a ng-click="toggleSidebar()"> KMS <span class="menu-icon glyphicon glyphicon-transfer"></span> </a> </li>
+				<li class="sidebar-title"><span>NAVIGATION</span></li>
+				<rd-sidebar-item icon="fa fa-tachometer" target="#">Tableau de bord</rd-sidebar-item>
+			</ul>
+		</div>
+		<!-- End Sidebar -->
 
-    <div id="content-wrapper">
-      <div class="page-content">
+		<div id="content-wrapper">
+			<div class="page-content">
 
-        <!-- Main Content -->
-        <div ui-view></div>
+				<!-- Main Content -->
+				<div ui-view></div>
 
-      </div><!-- End Page Content -->
-    </div><!-- End Content Wrapper -->
-  </div><!-- End Page Wrapper -->
+			</div><!-- End Page Content -->
+		</div><!-- End Content Wrapper -->
+	</div><!-- End Page Wrapper -->
 
-  <div id="page-login" ng-cloak ng-show="{{login}}" class="vertical-center">
-      <div class="container col-sm-4">
-          <form name="loginForm" novalidate>
-              <div class="form-group">
-                  <label for="username">Utilisateur</label>
-                  <input ng-model="username" type="text" id="username" name="username" class="form-control" placeholder="Entrez votre nom" autofocus="true" autocomplete="off" required>
-              </div>
-              <div class="form-group">
-                  <label for="password">Mot de passe</label>
-                  <input ng-model="password" type="password" id="password" name="password" class="form-control" placeholder="Entrez votre mot de passe" required>
-              </div>
-              <div class="form-group">
-                  <button class="btn btn-primary">Se connecter</button>
-              </div>
-          </form>
-      </div>    
-  </div>
+	<div id="page-login" ng-cloak ng-show="{{login}}" class="vertical-center">
+			<div class="container col-sm-4">
+					<form name="loginForm" novalidate>
+							<div class="form-group">
+									<label for="username">Utilisateur</label>
+									<input ng-model="username" type="text" id="username" name="username" class="form-control" placeholder="Entrez votre nom" autofocus="true" autocomplete="off" required>
+							</div>
+							<div class="form-group">
+									<label for="password">Mot de passe</label>
+									<input ng-model="password" type="password" id="password" name="password" class="form-control" placeholder="Entrez votre mot de passe" required>
+							</div>
+							<div class="form-group">
+									<button class="btn btn-primary">Se connecter</button>
+							</div>
+					</form>
+			</div>    
+	</div>
 </body>
 </html>
