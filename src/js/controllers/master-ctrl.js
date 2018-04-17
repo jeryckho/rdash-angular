@@ -10,7 +10,8 @@ function MasterCtrl($scope, $cookieStore, FB) {
 	 * Sidebar Toggle & Cookie Control
 	 */
 	var mobileView = 992;
-	$scope.login = false;
+	$scope.waiting = false;
+	$scope.ok = true;
 
 	$scope.getWidth = function() {
 		return window.innerWidth;
@@ -38,5 +39,17 @@ function MasterCtrl($scope, $cookieStore, FB) {
 		$scope.$apply();
 	};
 
-	$scope.users = FB.GetObject('users');
+	$scope.Connect = function () {
+		$scope.waiting = true;
+		$scope.FB.auth.$signInWithEmailAndPassword($scope.username, $scope.password)
+		.then(function(user){
+			$scope.ok = true;
+			$scope.waiting = false;
+		},function(){
+			$scope.ok = false;
+			$scope.password = '';
+			$scope.waiting = false;
+		});
+	}
+	$scope.FB = FB;
 }

@@ -29,6 +29,7 @@
 	<script type="text/javascript" src="js/services/template.js"></script>
 	<script type="text/javascript" src="js/services/sheet.js"></script>
 	<script type="text/javascript" src="js/services/svg-utils.js"></script>
+	<script type="text/javascript" src="js/services/fb.js"></script>
 	<script type="text/javascript" src="js/controllers/alert-ctrl.js"></script>
 	<script type="text/javascript" src="js/controllers/master-ctrl.js"></script>
 	<script type="text/javascript" src="js/controllers/sheet-ctrl.js"></script>
@@ -45,7 +46,26 @@
 	<!-- endbuild -->
 </head>
 <body ng-controller="MasterCtrl">
-	<div id="page-wrapper" ng-class="{'open': toggle}" ng-cloak ng-hide="{{login}}">
+
+	<div id="page-login" ng-cloak ng-hide="FB.user" class="vertical-center">
+		<div class="container col-sm-4">
+			<form name="loginForm" novalidate>
+				<div class="form-group">
+					<label for="username">Utilisateur</label>
+					<input ng-model="username" type="text" id="username" name="username" class="form-control" placeholder="Entrez votre mail" autofocus="true" autocomplete="off" required>
+				</div>
+				<div class="form-group">
+					<label for="password">Mot de passe</label>
+					<input ng-model="password" type="password" id="password" name="password" class="form-control" placeholder="Entrez votre mot de passe" required>
+				</div>
+				<div class="form-group" ng-hide="waiting">
+					<button class="btn" ng-class="{'btn-primary':ok,'btn-danger':!ok}" ng-click="Connect()">Se connecter</button>
+				</div>
+			</form>
+		</div>
+	</div>
+
+	<div id="page-wrapper" ng-class="{'open': toggle}" ng-cloak ng-show="FB.user">
 
 		<!-- Sidebar -->
 		<div id="sidebar-wrapper">
@@ -67,22 +87,5 @@
 		</div><!-- End Content Wrapper -->
 	</div><!-- End Page Wrapper -->
 
-	<div id="page-login" ng-cloak ng-show="{{login}}" class="vertical-center">
-			<div class="container col-sm-4">
-					<form name="loginForm" novalidate>
-							<div class="form-group">
-									<label for="username">Utilisateur</label>
-									<input ng-model="username" type="text" id="username" name="username" class="form-control" placeholder="Entrez votre nom" autofocus="true" autocomplete="off" required>
-							</div>
-							<div class="form-group">
-									<label for="password">Mot de passe</label>
-									<input ng-model="password" type="password" id="password" name="password" class="form-control" placeholder="Entrez votre mot de passe" required>
-							</div>
-							<div class="form-group">
-									<button class="btn btn-primary">Se connecter</button>
-							</div>
-					</form>
-			</div>    
-	</div>
 </body>
 </html>

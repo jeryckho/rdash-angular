@@ -18,6 +18,10 @@ angular
 				vm.lding = false;
 			});
 
+		vm.getEmail = function() {
+			return (FB.user && FB.user.email) ? FB.user.email : "?";
+		}
+
 		vm.newMod = function() {
 			var nMod = prompt("Entrez le nom", "");
 			if (nMod == null || nMod == "") {
@@ -42,4 +46,8 @@ angular
 		vm.closeAlert = function (index) {
 			vm.unchanged = true;
 		};
+
+		vm.Logout = function() {
+			FB.auth.$signOut();
+		}
 }]);

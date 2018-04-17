@@ -18,19 +18,4 @@ angular
 		}
 
 		return svc;
-	}])
-	.factory('FB', ['$firebaseArray', '$firebaseObject', function ($firebaseArray, $firebaseObject) {
-		var svc = {};
-		svc.ref = firebase.database().ref('kms');
-	
-		svc.GetArray = function (kid) {
-			var ref = svc.ref.child(kid);
-			return $firebaseArray(ref);
-		}
-	
-		svc.GetObject = function (kid) {
-			var ref = svc.ref.child(kid);
-			return $firebaseObject(ref);
-		}
-		return svc;
 	}]);
