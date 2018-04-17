@@ -44,6 +44,8 @@ function MasterCtrl($scope, $cookieStore, FB) {
 		$scope.FB.auth.$signInWithEmailAndPassword($scope.username, $scope.password)
 		.then(function(user){
 			$scope.ok = true;
+			$scope.username = '';
+			$scope.password = '';
 			$scope.waiting = false;
 		},function(){
 			$scope.ok = false;
