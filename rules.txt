@@ -1,0 +1,22 @@
+A
+	T
+		R *
+		W *
+	S
+		R *
+		W *
+
+/A
+	T
+		R *
+		W o
+	S
+		R o
+		W o
+
+T
+	R *
+	W A|o
+S
+	R A|o
+	W A|o

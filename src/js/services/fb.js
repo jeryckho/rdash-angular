@@ -5,9 +5,23 @@ angular
 		svc.ref = firebase.database().ref('kms');
 		svc.auth = $firebaseAuth();
 		svc.user = null;
+		svc.admin = false;
 	
 		svc.auth.$onAuthStateChanged(function(user) {
-			svc.user = user;
+			if (user !== null) {
+				svc.GetObject("users/" + user.uid)
+					.$loaded()
+					.then(function(res) {
+						svc.admin = res.admin ? res.admin : false;
+						svc.user = user;
+					},function(res) {
+						svc.admin = false;
+						svc.user = null;
+					});
+			} else {
+				svc.admin = false;
+				svc.user = null;
+			}
 		});
 
 		svc.GetArray = function (kid) {

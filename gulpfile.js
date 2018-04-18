@@ -18,6 +18,7 @@ var paths = {
 	templates: 'src/templates/**/*.html',
 	index: 'src/index.html',
 	bower_fonts: 'src/components/**/*.{ttf,woff,woff2,eof,svg}',
+	bower_jedit: 'src/components/jsoneditor/**/*.{ttf,woff,woff2,eof,svg}',
 };
 
 /**
@@ -36,7 +37,7 @@ gulp.task('usemin', function() {
 /**
  * Copy assets
  */
-gulp.task('build-assets', ['copy-bower_fonts']);
+gulp.task('build-assets', ['copy-bower_fonts','copy-bower_jedit']);
 
 gulp.task('copy-bower_fonts', function() {
 	return gulp.src(paths.bower_fonts)
@@ -44,6 +45,14 @@ gulp.task('copy-bower_fonts', function() {
 			dirname: '/fonts'
 		}))
 		.pipe(gulp.dest('dist/lib'));
+});
+
+gulp.task('copy-bower_jedit', function() {
+	return gulp.src(paths.bower_jedit)
+		.pipe(rename({
+			dirname: '/img'
+		}))
+		.pipe(gulp.dest('dist/lib/css'));
 });
 
 /**

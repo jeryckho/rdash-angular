@@ -16,6 +16,11 @@ angular
 				vm.models = Object.keys(res.templates);
 				vm.chars = Object.keys(res.sheets);
 				vm.lding = false;
+			},function(res){
+				vm.gene = res;
+				vm.models = [];
+				vm.chars = [];
+				vm.lding = false;
 			});
 
 		vm.getEmail = function() {
