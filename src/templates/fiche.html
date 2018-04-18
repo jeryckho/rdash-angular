@@ -11,7 +11,7 @@
 		<rect x="0" y="0" width="1" height="1" ng-attr-width="{{ VM.Sheet.Template.Fond.Width }}" ng-attr-height="{{ VM.Sheet.Template.Fond.Height }}"
 			fill="white" stroke="none" fill-opacity="0.01"></rect>
 	</g>
-	<g ng-repeat="box in VM.Sheet.Template.Boxes" ng-click="VM.Change(box.ref)" style="cursor: pointer">
+	<g ng-repeat="box in VM.Sheet.Template.Boxes" ng-click="VM.Act(box.ref,$index)" style="cursor: pointer">
 		<clipPath ng-attr-id="{{ 'Clp' + $index }}">
 			<rect x="0" y="0" width="1" height="1" ng-attr-x="{{ box.x }}" ng-attr-y="{{ box.y }}" ng-attr-width="{{ box.w }}" ng-attr-height="{{ box.h }}"></rect>
 		</clipPath>
@@ -19,7 +19,7 @@
 		<text x="0" y="0" ng-attr-x="{{ VM.Sheet.X(box) }}" ng-attr-y="{{ box.y + box.h/2 }}"
 			text-anchor="middle" ng-attr-text-anchor="{{ box.fer }}"
 			ng-attr-fill="{{ box.col }}" ng-attr-font-size="{{ box.h }}"
-			dominant-baseline="central" ng-attr-clip-path="{{ 'url(#Clp'+$index+')' }}">{{ VM.Sheet.Find(box.ref) }}</text>
+			dominant-baseline="central" ng-attr-clip-path="{{ 'url(#Clp'+$index+')' }}">{{ VM.Show(box.ref,$index) }}</text>
 	</g>
 </svg>
 <div ng-if="VM.Status == 'KO'">Cette Fiche n'existe pas...</div>
