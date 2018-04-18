@@ -2,43 +2,53 @@
 	<h3 class="modal-title" id="modal-title">Propriétés de la Zone</h3>
 </div>
 <div class="modal-body" id="modal-body">
-	<div class="form-group">
-		<label for="itemRef">Référence</label>
-		<input type="text" class="form-control" ng-model="$ctrl.item.ref" id="itemRef">
-	</div>
-	<h4 class="form-group">Emplacement :</h4>
-	<div class="form-inline">
-		<div class="form-group">
-			<label for="itemX">X</label>
-			<input type="number" class="form-control" ng-model="$ctrl.item.x" id="itemX">
-		</div>
-		<div class="form-group">
-			<label for="itemY">Y</label>
-			<input type="number" class="form-control" ng-model="$ctrl.item.y" id="itemY">
-		</div>
-	</div>
-	<div class="form-inline">
-		<div class="form-group">
-			<label for="itemH">Hauteur</label>
-			<input type="number" class="form-control" ng-model="$ctrl.item.h" id="itemH">
-		</div>
-		<div class="form-group">
-			<label for="itemW">Largeur</label>
-			<input type="number" class="form-control" ng-model="$ctrl.item.w" id="itemW">
-		</div>
-	</div>
-	<div class="form-group">
-		<label for="itemFer">Alignement</label>
-		<select class="form-control" ng-model="$ctrl.item.fer" id="itemFer">
-			<option value="start">A gauche</option>
-			<option value="middle">Centré</option>
-			<option value="end">A droite</option>
-		</select>
-	</div>
-	<div class="form-group">
-		<label for="itemCol">Couleur</label>
-		<input type="color" class="form-control" ng-model="$ctrl.item.col" id="itemCol">
-	</div>
+	<uib-tabset>
+		<uib-tab index="0" heading="Configuration">
+			<div class="form-group">
+				<label for="itemRef">Référence</label>
+				<input type="text" class="form-control" ng-model="$ctrl.item.ref" id="itemRef">
+			</div>
+			<h4 class="form-group">Emplacement :</h4>
+			<div class="form-inline">
+				<div class="form-group">
+					<label for="itemX">X</label>
+					<input type="number" class="form-control" ng-model="$ctrl.item.x" id="itemX">
+				</div>
+				<div class="form-group">
+					<label for="itemY">Y</label>
+					<input type="number" class="form-control" ng-model="$ctrl.item.y" id="itemY">
+				</div>
+			</div>
+			<div class="form-inline">
+				<div class="form-group">
+					<label for="itemH">Hauteur</label>
+					<input type="number" class="form-control" ng-model="$ctrl.item.h" id="itemH">
+				</div>
+				<div class="form-group">
+					<label for="itemW">Largeur</label>
+					<input type="number" class="form-control" ng-model="$ctrl.item.w" id="itemW">
+				</div>
+			</div>
+		</uib-tab>
+		<uib-tab index="1" heading="Avancé">
+			<div class="form-group">
+				<label for="itemFer">Alignement</label>
+				<select class="form-control" ng-model="$ctrl.item.fer" id="itemFer">
+					<option value="start">A gauche</option>
+					<option value="middle">Centré</option>
+					<option value="end">A droite</option>
+				</select>
+			</div>
+			<div class="form-group">
+				<label for="itemCol">Couleur</label>
+				<input type="color" class="form-control" ng-model="$ctrl.item.col" id="itemCol">
+			</div>
+			<div class="form-group">
+				<label for="itemAct">Action</label>
+				<input type="text" class="form-control" ng-model="$ctrl.item.act" id="itemAct">
+			</div>	
+		</uib-tab>
+	</uib-tabset>
 </div>
 <div class="modal-footer">
 	<button class="btn btn-primary" type="button" ng-click="$ctrl.ok()">OK</button>

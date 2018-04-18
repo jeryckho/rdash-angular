@@ -32,9 +32,7 @@ angular
 		}
 
 		vm.WTempOk = function(item) {
-			var resu = FB.admin || (vm.gene.templates[item] === FB.user.uid);
-			console.log(resu);
-			return resu;
+			return FB.admin || (vm.gene.templates[item] === FB.user.uid);
 		}
 
 		vm.newMod = function() {

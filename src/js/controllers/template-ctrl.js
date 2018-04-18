@@ -49,7 +49,8 @@ angular
 					h: Math.round(Math.abs(To.y - From.y)),
 					ref: '',
 					fer: 'middle',
-					col: '#0000ff'
+					col: '#0000ff',
+					act: ''
 				};
 			}
 		};
