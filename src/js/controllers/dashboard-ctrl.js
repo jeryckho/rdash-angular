@@ -27,12 +27,22 @@ angular
 			return (FB.user && FB.user.email) ? FB.user.email : "?";
 		}
 
+		vm.RSheetOK = function(item) {
+			return FB.admin || (vm.gene.sheets[item] === FB.user.uid);
+		}
+
+		vm.WTempOk = function(item) {
+			var resu = FB.admin || (vm.gene.templates[item] === FB.user.uid);
+			console.log(resu);
+			return resu;
+		}
+
 		vm.newMod = function() {
 			var nMod = prompt("Entrez le nom", "");
 			if (nMod == null || nMod == "") {
 				alert("User cancelled the prompt.");
 			} else {
-				vm.gene.templates[nMod] = true;
+				vm.gene.templates[nMod] = FB.user.uid;
 				vm.gene.$save();
 				vm.models.push(nMod);
 			}
@@ -42,7 +52,7 @@ angular
 			if (nChar == null || nChar == "") {
 				alert("User cancelled the prompt.");
 			} else {
-				vm.gene.sheets[nChar] = true;
+				vm.gene.sheets[nChar] = FB.user.uid;
 				vm.gene.$save();
 				vm.chars.push(nChar);
 			}
@@ -53,6 +63,10 @@ angular
 		};
 
 		vm.Logout = function() {
+			vm.X.selMod = null;
+			vm.X.selChar = null;
+			vm.X.searchMod = null;
+			vm.X.searchChar = null;
 			FB.auth.$signOut();
 		}
 }]);
