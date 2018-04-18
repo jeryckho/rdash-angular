@@ -19,7 +19,7 @@
 			fill="white" stroke="none" fill-opacity="0.01"></rect>
 	</g>
 	<!--Zones existantes-->
-	<g ng-repeat="rct in VM.Template.Datas.Boxes" ng-right-click="VM.Open(rct)" ng-mousemove="VM.Mov($event)">
+	<g ng-repeat="rct in VM.Template.Datas.Boxes" ng-click="VM.ChangeCursor(rct,$event)" ng-right-click="VM.Open(rct)" ng-mousemove="VM.Mov($event)" ng-style="{'cursor':VM.Cursor}">
 		<rect x="0" y="0" width="1" height="1" ng-attr-x="{{rct.x }}" ng-attr-y="{{ rct.y }}" ng-attr-width="{{ rct.w }}" ng-attr-height="{{ rct.h }}"
 			fill="blue" stroke="none" fill-opacity="0.6"></rect>
 	</g>
