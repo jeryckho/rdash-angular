@@ -33,12 +33,11 @@ angular
 			}
 		};
 
-		vm.Act = function(ref, idx) {
-			if (ref.startsWith("@RAND(")) {
-				vm.Temp[idx] = vm.Temp[idx] == null ? vm.ActRand(ref) : null;
-			} else if (ref.startsWith("@")) {
+		vm.Act = function(bx) {
+			if (bx.act && bx.act.startsWith("@RAND(")) {
+				vm.Temp[bx.ref] = vm.Temp[bx.ref] == null ? vm.ActRand(bx.act) : null;
 			} else {
-				vm.Change(ref);
+				vm.Change(bx.ref);
 			}
 		};
 
@@ -49,11 +48,7 @@ angular
 			}
 		}
 
-		vm.Show = function(ref, idx) {
-			if (ref.startsWith("@")) {
-				return vm.Temp[idx];
-			} else {
-				return vm.Sheet.Find(ref);
-			}
+		vm.Show = function(bx) {
+			return (bx.act && bx.act.startsWith("@")) ? vm.Temp[bx.ref] : vm.Sheet.Find(bx.ref);
 		};
 	}]);
