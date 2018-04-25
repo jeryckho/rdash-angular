@@ -28,7 +28,8 @@
     "bootstrap": "~3.3.6",
     "font-awesome": "~4.7.0",
     "jsoneditor": "~5.14.1",
-    "angularfire": "~2.3.0"
+    "angularfire": "~2.3.0",
+    "angular-bootstrap-contextmenu": "^1.1.0"
   },
   "repository": {
     "type": "git",

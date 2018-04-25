@@ -10,6 +10,28 @@ angular
 		vm.models = [];
 		vm.chars = [];
 		vm.lding = true;
+
+		vm.menuOptions = [
+			{
+				text: 'Model',
+				click: function ($itemScope, $event, modelValue, text, $li) {
+					console.log($itemScope.modl);
+				},
+				displayed: function ($itemScope, $event, modelValue, text, $li) {
+					return (typeof $itemScope.modl !== 'undefined') ? true : false;
+				}
+			},
+			{
+				text: 'Char',
+				click: function ($itemScope, $event, modelValue, text, $li) {
+					console.log($itemScope.char);
+				},
+				displayed: function ($itemScope, $event, modelValue, text, $li) {
+					return (typeof $itemScope.char !== 'undefined') ? true : false;
+				}
+			}
+		];
+
 		FB.GetObject('gene').$loaded()
 			.then(function(res){
 				vm.gene = res;

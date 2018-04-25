@@ -6,4 +6,4 @@ var config = {
 	storageBucket: 'premier-proj.appspot.com',
 };
 firebase.initializeApp(config);
-angular.module('KMS', ['firebase','ui.bootstrap', 'ui.router', 'ngCookies']);
+angular.module('KMS', ['firebase','ui.bootstrap', 'ui.bootstrap.contextMenu', 'ui.router', 'ngCookies']);
