@@ -13,7 +13,16 @@ angular
 
 		vm.menuOptions = [
 			{
-				text: 'Model',
+				text: 'Sélectionner',
+				click: function ($itemScope, $event, modelValue, text, $li) {
+					vm.X.selMod = $itemScope.modl;
+				},
+				displayed: function ($itemScope, $event, modelValue, text, $li) {
+					return (typeof $itemScope.modl !== 'undefined') ? true : false;
+				}
+			},
+			{
+				text: 'Renommer',
 				click: function ($itemScope, $event, modelValue, text, $li) {
 					console.log($itemScope.modl);
 				},
@@ -22,7 +31,34 @@ angular
 				}
 			},
 			{
-				text: 'Char',
+				text: 'Supprimer',
+				click: function ($itemScope, $event, modelValue, text, $li) {
+					console.log($itemScope.modl);
+				},
+				displayed: function ($itemScope, $event, modelValue, text, $li) {
+					return (typeof $itemScope.modl !== 'undefined') ? true : false;
+				}
+			},
+			{
+				text: 'Sélectionner',
+				click: function ($itemScope, $event, modelValue, text, $li) {
+					vm.X.selChar = $itemScope.char;
+				},
+				displayed: function ($itemScope, $event, modelValue, text, $li) {
+					return (typeof $itemScope.char !== 'undefined') ? true : false;
+				}
+			},
+			{
+				text: 'Renommer',
+				click: function ($itemScope, $event, modelValue, text, $li) {
+					console.log($itemScope.char);
+				},
+				displayed: function ($itemScope, $event, modelValue, text, $li) {
+					return (typeof $itemScope.char !== 'undefined') ? true : false;
+				}
+			},
+			{
+				text: 'Supprimer',
 				click: function ($itemScope, $event, modelValue, text, $li) {
 					console.log($itemScope.char);
 				},

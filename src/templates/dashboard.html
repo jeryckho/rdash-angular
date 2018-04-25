@@ -56,7 +56,7 @@
 		<rd-widget>
 			<rd-widget-body>
 				<div class="widget-icon red pull-left">
-					<i class="fa fa-list-alt"></i>
+					<a href="#MODL" target="_self"><i class="fa fa-list-alt"></i></a>
 				</div>
 				<div class="title">{{ VM.models.length }}</div>
 				<div class="comment">Modèles</div>
@@ -67,7 +67,7 @@
 		<rd-widget>
 			<rd-widget-body>
 				<div class="widget-icon green pull-left">
-					<i class="fa fa-id-badge"></i>
+					<a href="#CHAR" target="_self"><i class="fa fa-id-badge"></i></a>
 				</div>
 				<div class="title">{{ VM.chars.length }}</div>
 				<div class="comment">Persos</div>
@@ -78,7 +78,7 @@
 		<rd-widget>
 			<rd-widget-body>
 				<div class="widget-icon orange pull-left">
-					<i class="fa fa-address-card-o"></i>
+					<a href="#SHEET" target="_self"><i class="fa fa-address-card-o"></i></a>
 				</div>
 				<div class="title">{{ VM.models.length * VM.chars.length }}</div>
 				<div class="comment">Fiches</div>
@@ -91,7 +91,7 @@
 	<div class="col-lg-6">
 		<rd-widget>
 			<rd-widget-header icon="fa fa-list-alt text-danger" title="Modèles">
-				<input type="text" placeholder="Search" class="form-control input-sm" ng-model="VM.X.searchMod"/>
+				<a name="MODL"></a><input type="text" placeholder="Search" class="form-control input-sm" ng-model="VM.X.searchMod"/>
 			</rd-widget-header>
 			<rd-widget-body classes="medium no-padding">
 				<rd-loading ng-show="VM.lding"></rd-loading>
@@ -101,10 +101,10 @@
 							<tr><th>Modèle</th><th class="text-center">Détails</th></tr>
 						</thead>
 						<tbody>
-							<tr ng-repeat="modl in VM.models | filter:VM.X.searchMod" ng-class="{active:(VM.X.selMod==modl)}" ng-click="VM.X.selMod=modl">
+							<tr ng-repeat="modl in VM.models | filter:VM.X.searchMod" ng-class="{active:(VM.X.selMod==modl)}" ng-click="VM.X.selMod=modl" context-menu="VM.menuOptions">
 								<td>{{ modl }}</td>
 								<td class="text-center">
-									<a ui-sref="template({Tpl:modl})" context-menu="VM.menuOptions" ng-if="VM.WTempOk(modl)">
+									<a ui-sref="template({Tpl:modl})" ng-if="VM.WTempOk(modl)">
 										<span><i class="fa fa-list-alt fa-lg"></i></span>
 									</a>
 									<span ng-if="!VM.WTempOk(modl)"><i class="fa fa-list-alt fa-lg"></i></span>
@@ -126,7 +126,7 @@
 	<div class="col-lg-6">
 		<rd-widget>
 			<rd-widget-header icon="fa fa-id-badge text-success" title="Personnages">
-				<input type="text" placeholder="Search" class="form-control input-sm" ng-model="VM.X.searchChar" />
+				<a name="CHAR"></a><input type="text" placeholder="Search" class="form-control input-sm" ng-model="VM.X.searchChar" />
 			</rd-widget-header>
 			<rd-widget-body classes="medium no-padding">
 				<rd-loading ng-show="VM.lding"></rd-loading>
@@ -136,10 +136,10 @@
 							<tr><th>Nom</th><th class="text-center">Détails</th></tr>
 						</thead>
 						<tbody>
-							<tr ng-repeat="char in VM.chars | filter:VM.RSheetOK | filter:VM.X.searchChar" ng-class="{active:(VM.X.selChar==char)}" ng-click="VM.X.selChar=char">
+							<tr ng-repeat="char in VM.chars | filter:VM.RSheetOK | filter:VM.X.searchChar" ng-class="{active:(VM.X.selChar==char)}" ng-click="VM.X.selChar=char" context-menu="VM.menuOptions">
 								<td>{{ char }}</td>
 								<td class="text-center">
-									<a ui-sref="char({Sht:char})" context-menu="VM.menuOptions">
+									<a ui-sref="char({Sht:char})">
 										<span><i class="fa fa-id-badge fa-lg"></i></span>
 									</a>
 								</td>
@@ -164,7 +164,7 @@
 		<rd-widget>
 			<rd-widget-body>
 				<div class="widget-icon orange pull-left">
-					<i class="fa fa-address-card-o"></i>
+					<a name="SHEET"></a><i class="fa fa-address-card-o"></i>
 				</div>
 				<div class="title">{{VM.X.selMod+' / '+VM.X.selChar}}</div>
 				<div class="comment"><a ui-sref="fiche({Tpl:VM.X.selMod,Sht:VM.X.selChar})">Voir la Fiche</a></div>
