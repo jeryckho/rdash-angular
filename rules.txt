@@ -20,3 +20,13 @@ T
 S
 	R A|o
 	W A|o
+
+TODO : 
+	* ACTIONS
+	* Messages
+	* Droits
+	* Modals
+		* Ajout Char
+		* Ajout Template
+		* Modif Carac(fiche)
+	* Menu contextuel (renommer/supprimer)

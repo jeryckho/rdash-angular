@@ -4,7 +4,7 @@
 		<div class="user pull-right">
 		<div class="item dropdown" uib-dropdown>
 			<a href="#" class="dropdown-toggle" uib-dropdown-toggle>
-			<img src="img/avatar.jpg">
+				<img src="img/avatar.jpg">
 			</a>
 			<ul class="dropdown-menu dropdown-menu-right">
 			<li class="dropdown-header">
@@ -104,7 +104,7 @@
 							<tr ng-repeat="modl in VM.models | filter:VM.X.searchMod" ng-class="{active:(VM.X.selMod==modl)}" ng-click="VM.X.selMod=modl">
 								<td>{{ modl }}</td>
 								<td class="text-center">
-									<a ng-href="{{ '#/template/' + modl }}" ng-if="VM.WTempOk(modl)">
+									<a ui-sref="template({Tpl:modl})" ng-if="VM.WTempOk(modl)">
 										<span><i class="fa fa-list-alt fa-lg"></i></span>
 									</a>
 									<span ng-if="!VM.WTempOk(modl)"><i class="fa fa-list-alt fa-lg"></i></span>
@@ -139,7 +139,7 @@
 							<tr ng-repeat="char in VM.chars | filter:VM.RSheetOK | filter:VM.X.searchChar" ng-class="{active:(VM.X.selChar==char)}" ng-click="VM.X.selChar=char">
 								<td>{{ char }}</td>
 								<td class="text-center">
-									<a ng-href="{{'#/char/'+char}}">
+									<a ui-sref="char({Sht:char})">
 										<span><i class="fa fa-id-badge fa-lg"></i></span>
 									</a>
 								</td>
@@ -167,7 +167,7 @@
 					<i class="fa fa-address-card-o"></i>
 				</div>
 				<div class="title">{{VM.X.selMod+' / '+VM.X.selChar}}</div>
-				<div class="comment"><a ng-href="{{'#/fiche/'+VM.X.selMod+'/'+VM.X.selChar}}">Voir la Fiche</a></div>
+				<div class="comment"><a ui-sref="fiche({Tpl:VM.X.selMod,Sht:VM.X.selChar})">Voir la Fiche</a></div>
 			</rd-widget-body>
 		</rd-widget>
 	</div>
