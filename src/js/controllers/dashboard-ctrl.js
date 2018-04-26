@@ -4,7 +4,7 @@
 
 angular
 	.module("KMS")
-	.controller("DashboardCtrl", ['$rootScope', 'FB', function ($rootScope, FB) {
+	.controller("DashboardCtrl", ['$rootScope', '$state', 'FB', function ($rootScope, $state, FB) {
 		var vm = this;
 		vm.X = $rootScope;
 		vm.models = [];
@@ -13,12 +13,37 @@ angular
 
 		vm.menuOptions = [
 			{
-				text: 'Sélectionner',
+				text: 'Editer',
 				click: function ($itemScope, $event, modelValue, text, $li) {
-					vm.X.selMod = $itemScope.modl;
+					if (typeof $itemScope.modl !== "undefined") {
+						$state.go("template", { Tpl: $itemScope.modl });
+					} else if (typeof $itemScope.char !== "undefined") {
+						$state.go("char", { Sht: $itemScope.char });
+					}
 				},
 				displayed: function ($itemScope, $event, modelValue, text, $li) {
-					return (typeof $itemScope.modl !== 'undefined') ? true : false;
+					if (typeof $itemScope.modl !== "undefined") {
+						return vm.WTempOk($itemScope.modl);
+					} else if (typeof $itemScope.char !== "undefined") {
+						return vm.RSheetOK($itemScope.char);
+					}
+					return false;
+				},
+				hasBottomDivider: function ($itemScope, $event, modelValue, text, $li) {
+					return true;
+				}
+			},
+			{
+				text: 'Sélectionner',
+				click: function ($itemScope, $event, modelValue, text, $li) {
+					if (typeof $itemScope.modl !== "undefined") {
+						vm.X.selMod = $itemScope.modl;
+					} else if (typeof $itemScope.char !== "undefined") {
+						vm.X.selChar = $itemScope.char;
+					}
+				},
+				displayed: function ($itemScope, $event, modelValue, text, $li) {
+					return true;
 				}
 			},
 			{
@@ -27,7 +52,12 @@ angular
 					console.log($itemScope.modl);
 				},
 				displayed: function ($itemScope, $event, modelValue, text, $li) {
-					return (typeof $itemScope.modl !== 'undefined') ? true : false;
+					if (typeof $itemScope.modl !== "undefined") {
+						return vm.WTempOk($itemScope.modl);
+					} else if (typeof $itemScope.char !== "undefined") {
+						return vm.RSheetOK($itemScope.char);
+					}
+					return false;
 				}
 			},
 			{
@@ -36,34 +66,12 @@ angular
 					console.log($itemScope.modl);
 				},
 				displayed: function ($itemScope, $event, modelValue, text, $li) {
-					return (typeof $itemScope.modl !== 'undefined') ? true : false;
-				}
-			},
-			{
-				text: 'Sélectionner',
-				click: function ($itemScope, $event, modelValue, text, $li) {
-					vm.X.selChar = $itemScope.char;
-				},
-				displayed: function ($itemScope, $event, modelValue, text, $li) {
-					return (typeof $itemScope.char !== 'undefined') ? true : false;
-				}
-			},
-			{
-				text: 'Renommer',
-				click: function ($itemScope, $event, modelValue, text, $li) {
-					console.log($itemScope.char);
-				},
-				displayed: function ($itemScope, $event, modelValue, text, $li) {
-					return (typeof $itemScope.char !== 'undefined') ? true : false;
-				}
-			},
-			{
-				text: 'Supprimer',
-				click: function ($itemScope, $event, modelValue, text, $li) {
-					console.log($itemScope.char);
-				},
-				displayed: function ($itemScope, $event, modelValue, text, $li) {
-					return (typeof $itemScope.char !== 'undefined') ? true : false;
+					if (typeof $itemScope.modl !== "undefined") {
+						return vm.WTempOk($itemScope.modl);
+					} else if (typeof $itemScope.char !== "undefined") {
+						return vm.RSheetOK($itemScope.char);
+					}
+					return false;
 				}
 			}
 		];
@@ -96,8 +104,8 @@ angular
 		vm.newMod = function() {
 			var nMod = prompt("Entrez le nom", "");
 			if (nMod == null || nMod == "") {
-				alert("User cancelled the prompt.");
-			} else {
+				console.log("User cancelled the prompt.");
+			} else if (typeof vm.gene.templates[nMod] === "undefined") {
 				vm.gene.templates[nMod] = FB.user.uid;
 				vm.gene.$save();
 				vm.models.push(nMod);
@@ -106,8 +114,8 @@ angular
 		vm.newChar = function() {
 			var nChar = prompt("Entrez le nom", "");
 			if (nChar == null || nChar == "") {
-				alert("User cancelled the prompt.");
-			} else {
+				console.log("User cancelled the prompt.");
+			} else if (typeof vm.gene.sheets[nChar] === "undefined") {
 				vm.gene.sheets[nChar] = FB.user.uid;
 				vm.gene.$save();
 				vm.chars.push(nChar);
