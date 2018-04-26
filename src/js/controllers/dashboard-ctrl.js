@@ -5,11 +5,12 @@
 angular
 	.module("KMS")
 	.controller("DashboardCtrl", ['$rootScope', '$state', 'FB', function ($rootScope, $state, FB) {
+		// DECLARATIONS
 		var vm = this;
 		vm.X = $rootScope;
 		vm.models = [];
 		vm.chars = [];
-		vm.lding = true;
+		vm.lding = false;
 
 		vm.menuOptions = [
 			{
@@ -76,7 +77,9 @@ angular
 			}
 		];
 
-		FB.GetObject('gene').$loaded()
+		vm.initCtrl = function() {
+			vm.lding = true;
+			FB.GetObject('gene').$loaded()
 			.then(function(res){
 				vm.gene = res;
 				vm.models = Object.keys(res.templates);
@@ -88,6 +91,7 @@ angular
 				vm.chars = [];
 				vm.lding = false;
 			});
+		}
 
 		vm.getEmail = function() {
 			return (FB.user && FB.user.email) ? FB.user.email : "?";
@@ -133,4 +137,8 @@ angular
 			vm.X.searchChar = null;
 			FB.auth.$signOut();
 		}
+
+		// INITIALISATION
+		vm.initCtrl();
+
 }]);
