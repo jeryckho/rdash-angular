@@ -48,8 +48,13 @@
 	<!-- endbuild -->
 </head>
 <body ng-controller="MasterCtrl">
+	<div id="page-login" ng-cloak ng-show="FB.init" class="vertical-center">
+		<div class="container col-sm-4">
+			<rd-loading></rd-loading>
+		</div>
+	</div>
 
-	<div id="page-login" ng-cloak ng-hide="FB.user" class="vertical-center">
+	<div id="page-login" ng-cloak ng-hide="FB.user || FB.init" class="vertical-center">
 		<div class="container col-sm-4">
 			<form name="loginForm" novalidate>
 				<div class="form-group">

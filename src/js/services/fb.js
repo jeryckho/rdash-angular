@@ -6,6 +6,7 @@ angular
 		svc.auth = $firebaseAuth();
 		svc.user = null;
 		svc.admin = false;
+		svc.init = true;
 	
 		svc.auth.$onAuthStateChanged(function(user) {
 			if (user !== null) {
@@ -14,13 +15,16 @@ angular
 					.then(function(res) {
 						svc.admin = res.admin ? res.admin : false;
 						svc.user = user;
+						svc.init = false;
 					},function(res) {
 						svc.admin = false;
 						svc.user = null;
+						svc.init = false;
 					});
 			} else {
 				svc.admin = false;
 				svc.user = null;
+				svc.init = false;
 			}
 		});
 
